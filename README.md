@@ -34,4 +34,6 @@ See GemFile and Gemfile.lock
 * Deployment instructions
 
 
-* ...
+* GIT repo
+url = https://github.com/lucasshaw12/rails_odin_project
+lucasshaw12/rails_odin_project
