@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article
     else
-      render new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -44,7 +44,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :status)
   end
 
 end

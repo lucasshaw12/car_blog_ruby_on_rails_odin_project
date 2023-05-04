@@ -1,11 +1,15 @@
-<h1>Hello rails project</h1>
+<h1>All Article Page</h1>
+
+This blog has <%= Article.public_count %> articles so far!
 
 <ul>
-    <% @articles.each do |article| %>
-        <li>
-            <%= link_to article.title, article %>
-        </li>
+  <% @articles.each do |article| %>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
     <% end %>
+  <% end %>
 </ul>
 
 <%= link_to "New article", new_article_path %>
