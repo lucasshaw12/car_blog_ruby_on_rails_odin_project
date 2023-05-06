@@ -1,6 +1,6 @@
 <h1>All Article Page</h1>
 
-This blog has <%= Article.public_count %> articles so far!
+<%= display_article_count_string %>
 
 <ul>
   <% @articles.each do |article| %>
