@@ -13,9 +13,12 @@
   <header>
     <%= link_to "All articles", articles_path %>
     <%= link_to "New article", new_article_path %>
+    <%= link_to "Home", root_path %>
   </header>
 
   <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
