@@ -9,6 +9,8 @@
                 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </li>
 </ul>
+<p>Created on: <%= @article.created_at.strftime("%d %b %y %H:%M:%S") %></p>
+<p>Updated on: <%= @article.updated_at.strftime("%d %b %y %H:%M:%S") %></p>
 
 <h2>Comments</h2>
 <%= render @article.comments %>

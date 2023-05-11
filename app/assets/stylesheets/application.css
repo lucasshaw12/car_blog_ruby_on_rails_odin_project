@@ -48,6 +48,10 @@ p {
     line-height: 20px;
 }
 
+p.timestamp {
+    font-size: 10px;
+}
+
 blockquote {
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-size: 21px;
