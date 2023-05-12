@@ -32,8 +32,8 @@ See GemFile and Gemfile.lock
 
 
 * Deployment instructions
-
+Run "rails s" in terminal
 
 * GIT repo
-url = https://github.com/lucasshaw12/rails_odin_project
-lucasshaw12/rails_odin_project
+url = https://github.com/lucas.shaw12/rails_odin_project
+lucas.shaw12/rails_odin_project
