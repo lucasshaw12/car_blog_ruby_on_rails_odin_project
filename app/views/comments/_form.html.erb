@@ -1,17 +1,22 @@
 <%= form_with model: [@article, @article.comments.build] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_area :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.label :status %>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= form.label :commenter %>
+  </span>
+  <%= form.text_area :commenter, :class => "form-control"%>
+</div>
+
+<div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= form.label :body %>
+  </span>
+  <%= form.text_area :body, :class => "form-control" %>
+</div>
+
+<div class="input-group mb-3 w-25">
+  <span class="input-group-text"><%= form.label :status %>
+  </span>
+  <%= form.select :status, options_for_select(['public', 'private', 'archived']), {}, :class => 'form-select' %>
+</div>
+
+<%= form.submit :class => "btn btn-light" %>
+
 <% end %>
