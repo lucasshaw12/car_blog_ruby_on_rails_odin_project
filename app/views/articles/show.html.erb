@@ -3,14 +3,15 @@
 <p><%= @article.body %></p>
 
 <ul>
-  <li> <%= link_to "Edit", edit_article_path(@article) %></li>
-  <li>
-    <%= link_to "Destroy", article_path(@article),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <li class="list-unstyled"> <%= link_to "Edit", edit_article_path(@article), :class => "link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover me-3" %>
+    <%= link_to "Delete", article_path(@article), :class => "link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover",
+    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </li>
 </ul>
-<p class="timestamp">Created on: <%= @article.created_at.strftime("%d %b %y %H:%M:%S") %></p>
-<p class="timestamp">Updated on: <%= @article.updated_at.strftime("%d %b %y %H:%M:%S") %></p>
+<p class="timestamp">Created on: <%= @article.created_at.strftime("%d %b %y %H:%M:%S") %> | Updated on: <%= @article.updated_at.strftime("%d %b %y %H:%M:%S") %>
+</p>
+<br>
+<br>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
