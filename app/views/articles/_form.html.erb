@@ -1,27 +1,30 @@
 <%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :title %> <br>
-    <%= form.text_field :title %>
-    <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+<div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= form.label :title %>
+  </span>
+  <%= form.text_field :title, :class => "form-control"  %>
+  <% article.errors.full_messages_for(:title).each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+</div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_field :body %>
-    <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+<div class="input-group mb-3 w-50">
+  <span class="input-group-text"><%= form.label :body %>
+  </span>
+  <%= form.text_field :body, :class => "form-control"  %>
+  <% article.errors.full_messages_for(:body).each do |message| %>
+  <div><%= message %></div>
+  <% end %>
+</div>
 
-  <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  </p>
+<div class="input-group mb-3 w-25">
+  <span class="input-group-text"><%= form.label :status %>
+  </span>
+  <%= form.select :status, options_for_select(['public', 'private', 'archived']), {}, :class => 'form-select' %>
+</div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+<div class="mb-3">
+  <%= form.submit :class => "btn btn-light" %>
+</div>
 <% end %>
 

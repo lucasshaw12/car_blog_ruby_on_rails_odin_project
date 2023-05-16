@@ -1,12 +1,13 @@
 <h1>All Articles</h1>
 
-<p><%= display_article_count_string %></p>
+<h3><%= display_article_count_string %></h3>
 
-<ul>
+<ul class="list-group list-group-flush w-25">
   <% @articles.each do |article| %>
     <% unless article.archived? %>
-      <li>
+      <li class="list-group-item">
         <%= link_to article.title, article %>
+      <span class="badge rounded-pill text-bg-warning">14 new</span>
       </li>
     <% end %>
   <% end %>
