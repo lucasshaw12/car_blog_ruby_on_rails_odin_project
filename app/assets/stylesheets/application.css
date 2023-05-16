@@ -79,3 +79,8 @@ a {
     font-weight: 400;
     line-height: 18.5714px;
 }
+
+dialog {
+    border: .5px solid grey;
+    border-radius: 5px;
+}

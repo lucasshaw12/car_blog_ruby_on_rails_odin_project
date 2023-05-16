@@ -4,6 +4,7 @@
 
 <ul class="ps-0">
   <li class="list-unstyled"> <%= link_to "Edit", edit_article_path(@article), :class => "link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover me-3" %>
+    
     <%= link_to "Delete", article_path(@article), :class => "link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover",
     data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </li>
