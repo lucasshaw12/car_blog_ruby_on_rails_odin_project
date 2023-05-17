@@ -5,14 +5,14 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comments = @article.comments.create(comment_params)
-    redirect_to article_path(@article)
+    redirect_to article_path(@article), notice: "Comment added successfully"
   end
 
   def destroy
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(@article), status: :see_other
+    redirect_to article_path(@article), status: :see_other, notice: "Comment deleted successfully"
   end
 
   def edit
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     # redirect_to article_path(@comment)
 
     if @comment.update(comment_params)
-      redirect_to @comment
+      redirect_to @comment, notice: "Comment updated successfully"
     else
       render :edit, status: :unprocessable_entity
     end
