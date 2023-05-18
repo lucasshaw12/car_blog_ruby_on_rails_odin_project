@@ -20,4 +20,8 @@
 <%= render @article.comments %>
 
 <h3>Add a comment</h3>
-<%= render 'comments/form' %>
+<% if user_signed_in? %>
+  <%= render 'comments/form' %>
+<% else %>
+  <%= flash.now[:notice] = "Please #{link_to 'sign in', new_user_session_path} or #{link_to 'register', new_user_registration_path } and account to comment".html_safe %>
+<% end %>
