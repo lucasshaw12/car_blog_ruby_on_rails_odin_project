@@ -1,14 +1,11 @@
 <div class="d-flex flex-column">
   <% if current_user %>
-    <h2>Welcome <%= current_user.email %></h2>
-    <h2><%= current_user.username %></h2>
+    <h1 class="display-3">Hi, <%= current_user.username %></h1>
 
-    <p>You have successfully signed in!</p>
-    <p>Your user role is: <%= current_user.role %></p>
+    <h1>Welcome to your Dashboard:</h1>
 
     <% if current_user.admin? %>
       <p>There are <%= User.count %> users on the platform</p>
     <% end %>
-    <%= link_to "Edit account details", edit_user_registration_path %>
   <% end %>
 </div>
