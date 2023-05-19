@@ -5,6 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  has_many :articles   
+  
   def create
     # Create the user form params
     @user = User.new(user_params)

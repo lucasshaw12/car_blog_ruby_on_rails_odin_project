@@ -2,13 +2,16 @@
 
 <lead><%= display_article_count_string %></lead>
 
-<ul class="list-group list-group-flush w-25">
+<ul class="list-group list-group-flush w-50">
   <% @articles.each do |article| %>
     <% unless article.archived? %>
       <li class="list-group-item">
-        <%= link_to article.title, article %>
+        <%= link_to article.title, article %> by: <%= article.user.username %>
       <span class="badge rounded-pill text-bg-warning">
-        <%= article.comments.count %>
+        Comments:<%= article.comments.count %>
+      </span>
+      <span class="badge rounded-pill text-bg-warning">
+        Views:<%= article.comments.count %>
       </span>
       </li>
     <% end %>
