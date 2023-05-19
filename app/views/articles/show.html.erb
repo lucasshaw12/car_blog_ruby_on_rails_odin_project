@@ -2,8 +2,9 @@
 
 <div class="card">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-body-secondary">Written by: <%= @article.user.username %></h6>
-    <p class="card-text"><%= @article.body %> <%= pluralize(@article.views, "View") %></p>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Written by: <%= @article.user.username %> </h6>
+    <p><i><%= pluralize(@article.views, "View") %></i></p>
+    <p class="card-text"><%= @article.body %></p>
     <ul class="ps-0">
   <li class="list-unstyled"> <%= link_to "Edit", edit_article_path(@article), :class => "link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover me-3" %>
     
@@ -17,12 +18,8 @@
 </p>
   </div>
 </div>
-
-
-
 <br>
 <br>
-
 <h2><u><%= pluralize(@article.comments.count, "comment") %></u></h2>
 <%= render @article.comments %>
 
