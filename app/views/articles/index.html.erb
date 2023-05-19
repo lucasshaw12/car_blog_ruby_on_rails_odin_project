@@ -8,10 +8,10 @@
       <li class="list-group-item">
         <%= link_to article.title, article %> by: <%= article.user.username %>
       <span class="badge rounded-pill text-bg-warning">
-        Comments:<%= article.comments.count %>
+        <%= pluralize(article.comments.count, "comment") %>
       </span>
       <span class="badge rounded-pill text-bg-warning">
-        Views:<%= article.comments.count %>
+        <%= pluralize(article.views, "View") %>
       </span>
       </li>
     <% end %>
