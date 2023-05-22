@@ -6,13 +6,14 @@
   <% @articles.each do |article| %>
     <% unless article.archived? %>
       <li class="list-group-item">
-        <%= link_to article.title, article %> by: <%= article.user.username %>
+        <span><%= link_to article.title, article %> by: <%= article.user.username %></span>
       <span class="badge rounded-pill text-bg-warning">
         <%= pluralize(article.comments.count, "comment") %>
       </span>
       <span class="badge rounded-pill text-bg-warning">
         <%= pluralize(article.views, "View") %>
       </span>
+        <span><small><i>Updated <%= time_ago_in_words(article.updated_at) %> ago</i></small></span>
       </li>
     <% end %>
   <% end %>
