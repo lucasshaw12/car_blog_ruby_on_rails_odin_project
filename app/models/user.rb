@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :articles   
   has_many :comments   
+  has_many :notifications, as: :recipient, dependent: :destroy
   
   def create
     # Create the user form params

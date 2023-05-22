@@ -4,6 +4,11 @@ Guide followed from:
 - https://www.theodinproject.com/lessons/ruby-on-rails-blog-app 
 &
 - https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database
+&
+- https://www.youtube.com/playlist?list=PL3mtAHT_eRezB9fnoIcKS4vYFjm23vddb
+&
+- 
+https://www.youtube.com/playlist?list=PLm8ctt9NhMNV75T9WYIrA6m9I_uw7vS56
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

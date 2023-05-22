@@ -1,0 +1,10 @@
+<!-- <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dr Dropdown"> -->
+	<%= @unread.count >= 9 ? "9+" : @unread.count %>
+<!-- </a>
+<ul class="dropdown-menu">
+	<li> -->
+		<% @unread.each do |notification| %>
+		<%= link_to notification.to_notification.message, notification.to_notification.url, :class => "dropdown-item" %>
+		<% end %>
+	<!-- </li>
+</ul> -->

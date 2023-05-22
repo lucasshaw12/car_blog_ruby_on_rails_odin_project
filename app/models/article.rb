@@ -5,4 +5,6 @@ class Article < ApplicationRecord
 
   validates :title, presence: true, length: {minimum: 1, maximum: 40}
   validates :body, presence: true, length: { minimum: 10, maximum: 10000 }
+
+  has_noticed_notifications model_name: 'Notification'
 end
