@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  # allows for chained url routes
+  # eg. /posts/1/comments/4
   resources :articles do
     resources :comments
   end

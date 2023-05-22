@@ -2,6 +2,9 @@
 # with its default values. The data can then be loaded with the bin/rails
 # db:seed command (or created alongside the database with db:setup).
 
+# user = User.new(email: "lucaspython@hotmail.com", username: "lucasusername", password: "password", password_confirmation: "password")
+# user.skip_confirmation!
+# user.save
 
 10.times do |article| Article.create!(title: "Article #{article}", body: "Body 
 - #{article} - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris

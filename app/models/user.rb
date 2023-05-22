@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_many :articles   
+  has_many :comments   
   
   def create
     # Create the user form params

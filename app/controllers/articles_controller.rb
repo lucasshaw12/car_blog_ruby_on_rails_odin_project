@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    # @comment = @article.comments.new
+    @comment = @article.comments.order(updated_at: :desc)
     @article.update(views: @article.views + 1)
   end
 

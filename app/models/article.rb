@@ -3,6 +3,6 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :user   
 
-  validates :title, presence: true
-  validates :body, presence: true, length: { minimum: 10 }
+  validates :title, presence: true, length: {minimum: 1, maximum: 40}
+  validates :body, presence: true, length: { minimum: 10, maximum: 10000 }
 end
