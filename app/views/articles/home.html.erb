@@ -5,7 +5,7 @@
     <h1>Welcome to your Dashboard:</h1>
 
     <% if current_user.admin? %>
-      <p>There are <%= User.count %> users on the platform</p>
+      <p>There are <%= pluralize(User.count, "user") %> on the platform</p>
     <% end %>
   <% end %>
 </div>

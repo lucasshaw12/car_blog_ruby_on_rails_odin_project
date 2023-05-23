@@ -1,6 +1,6 @@
 <h1>All Articles</h1>
 
-<lead><%= display_article_count_string %></lead>
+<lead>This blog has <%= pluralize(Article.count, "article")%></lead>
 
 <ul class="list-group list-group-flush w-50">
   <% @articles.each do |article| %>
@@ -11,7 +11,7 @@
         <%= pluralize(article.comments.count, "comment") %>
       </span>
       <span class="badge rounded-pill text-bg-warning">
-        <%= pluralize(article.views, "View") %>
+        <%= pluralize(article.views, "view") %>
       </span>
         <span><small><i>Updated <%= time_ago_in_words(article.updated_at) %> ago</i></small></span>
       </li>
