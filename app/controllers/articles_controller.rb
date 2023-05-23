@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comment = @article.comments.order(updated_at: :desc)
     @article.update(views: @article.views + 1)
+
+    mark_notifications_as_read
   end
 
   def new
@@ -51,6 +53,13 @@ class ArticlesController < ApplicationController
   private
   def article_params
     params.require(:article).permit(:title, :body, :status)
+  end
+
+  def mark_notifications_as_read
+    if current_user
+      notifications_to_mark_as_read = @article.notifications_as_article.where(recipient: current_user)
+      notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
+    end
   end
 
 end

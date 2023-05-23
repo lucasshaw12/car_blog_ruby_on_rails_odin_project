@@ -84,3 +84,11 @@ dialog {
     border: .5px solid grey;
     border-radius: 5px;
 }
+
+.unread{
+  background-color: tomato;
+}
+
+.read{
+  background-color: inherit;
+}
