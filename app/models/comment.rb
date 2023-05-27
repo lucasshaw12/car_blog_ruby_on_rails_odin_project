@@ -12,12 +12,10 @@ class Comment < ApplicationRecord
   private
 
   def notify_recipient
-      CommentNotification.with(comment: self, article: article).deliver_later(article.user)
+    CommentNotification.with(comment: self, article:).deliver_later(article.user)
   end
 
   def cleanup_notifications
     notifications_as_comment.destroy_all
   end
-
-
 end

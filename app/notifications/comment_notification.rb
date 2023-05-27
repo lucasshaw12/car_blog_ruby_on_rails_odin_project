@@ -15,15 +15,15 @@ class CommentNotification < Noticed::Base
   #
   # param :post
 
-  #Define helper methods to make rendering easier.
-  
+  # Define helper methods to make rendering easier.
+
   def message
     @article = Article.find(params[:comment][:article_id])
     @comment = Comment.find(params[:comment][:id])
     @user = User.find(@comment.user_id)
     "#{@user.username} commented on #{@article.title.truncate(15)}"
   end
-  
+
   def url
     article_path(Article.find(params[:comment][:article_id]))
   end

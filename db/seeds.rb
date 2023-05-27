@@ -6,7 +6,8 @@
 # user.skip_confirmation!
 # user.save
 
-10.times do |article| Article.create!(title: "Article #{article}", body: "Body 
+10.times do |article|
+  Article.create!(title: "Article #{article}", body: "Body
 - #{article} - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
 quis mauris turpis. Curabitur nec cursus lectus. In purus elit, bibendum in
 odio in, interdum porta neque. Nullam ultricies metus id lobortis interdum.
@@ -26,4 +27,5 @@ nisl sapien vel mi. Quisque quis nisl vitae mi faucibus dapibus eget ac ipsum.
 Aliquam vehicula dolor blandit volutpat efficitur. Nulla eu nunc purus.
 Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque iaculis
 venenatis tellus id pharetra. Phasellus at aliquam erat, id finibus est.",
-status: "public", user_id: User.first.id) end
+                  status: 'public', user_id: User.first.id)
+end

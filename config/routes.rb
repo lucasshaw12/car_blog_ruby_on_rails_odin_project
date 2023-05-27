@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "articles#home"
+  root 'articles#home'
   get 'search', to: 'search#index'
 
   devise_for :users, controllers: {
