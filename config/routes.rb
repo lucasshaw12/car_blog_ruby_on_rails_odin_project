@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "articles#home"
+  get 'search', to: 'search#index'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',

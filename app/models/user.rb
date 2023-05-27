@@ -38,4 +38,8 @@ class User < ApplicationRecord
     self.role ||= :user
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["username"]
+  end
+
 end
