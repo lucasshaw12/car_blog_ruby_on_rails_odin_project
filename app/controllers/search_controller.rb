@@ -1,5 +1,6 @@
 class SearchController < ApplicationController
-  # using ransack method, search for all matches using search_form_for GET method
+  # using ransack method, return all search matches 
+  # found using search_form_for GET method 
   # sort returned results
   def index
     @q = Article.ransack(params[:q])

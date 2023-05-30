@@ -8,11 +8,17 @@ class Article < ApplicationRecord
 
   has_noticed_notifications model_name: 'Notification'
 
+  # `ransackable_attributes` by default returns all column names
+  # and any defined ransackers as an array of strings.
+  # For overriding with a whitelist array of strings.
   def self.ransackable_attributes(_auth_object = nil)
-    ['title']
+    column_names + _ransackers.keys
   end
 
+  # `ransackable_associations` by default returns the names
+  # of all associations as an array of strings.
+  # For overriding with a whitelist array of strings.
   def self.ransackable_associations(_auth_object = nil)
-    ['user']
+    reflect_on_all_associations.map { |a| a.name.to_s }
   end
 end

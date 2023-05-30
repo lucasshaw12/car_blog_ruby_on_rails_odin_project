@@ -4,6 +4,8 @@ import "controllers"
 import "trix"
 import "@rails/actiontext"
 
+
+// Modal to confirm article or comment deletion
 Turbo.setConfirmMethod(() => {
 	let dialog = document.getElementById("turbo-confirm")
 	dialog.showModal()
