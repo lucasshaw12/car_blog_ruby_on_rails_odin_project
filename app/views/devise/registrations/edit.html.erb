@@ -3,18 +3,21 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <%= render 'devise/shared/error_messages', resource: resource %>
 
-<div class="input-group w-25">
+<div class="input-group mb-3 w-25">
   <% if resource.avatar.attached? %>
-  <%= image_tag resource.avatar.variant(resize_to_limit: [200, 200]), class: 'rounded mb-3'%>
+    <%= image_tag(resource.resize_image)%>
+  <% else %>
+    <div class="alert alert-warning" role="alert">
+      No avatar uploaded
+    </div>
   <% end %>
 </div>
 <span class="btn btn-outline-dark btn-file">
-  Choose File
+  Upload avatar
   <%= f.file_field :avatar%>
 </span>
-
+<div class="form-text">(must be PNG, JPEG or JPG format)</div>
 <hr>
-
 <div class="input-group mb-3 w-25">
   <span class="input-group-text"><%= f.label :role %>
   </span>
@@ -43,7 +46,7 @@
 
 <hr>
 <div class="input-group mb-3 w-50">
-  <span class="input-group-text"><%= f.label :password%> 
+  <span class="input-group-text"><%= f.label :password%>
   </span>
   <%= f.password_field :password, autocomplete: "new-password", :placeholder => "New password", :class => "form-control" %>
   <% if @minimum_password_length %>
@@ -70,11 +73,11 @@
 </div>
 
 <div class="mb-3">
-  <%= f.submit "Update" , :class => "btn btn-primary"%>
+  <%= f.submit "Update", :class => "btn btn-primary"%>
   <%= link_to "Back", :back, :class => "btn btn-link"%>
 </div>
 <% end %>
 <hr>
-<div><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger" %>  
+<div><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, :class => "btn btn-danger" %>
 </div>
 

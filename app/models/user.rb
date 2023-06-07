@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  has_one_attached :avatar 
+  has_one_attached :avatar
   has_many :articles
   has_many :comments
   has_many :notifications, as: :recipient, dependent: :destroy
+  validates :validate_image_file_type, presence: true
 
   def create
     # Create the user form params
@@ -19,6 +20,16 @@ class User < ApplicationRecord
     else
       render action: 'new'
     end
+  end
+
+  def validate_image_file_type
+    if avatar.attached? && !avatar.content_type.in?(%w[image/jpeg image/png image/jpg])
+      errors.add(:avatar, 'must be JPEG or PNG')
+    end
+  end
+
+  def resize_image
+    avatar.variant(resize_to_limit: [200, 200])
   end
 
   private
