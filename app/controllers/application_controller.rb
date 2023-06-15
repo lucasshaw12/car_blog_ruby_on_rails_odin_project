@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # Set basic http auth before anyone can access the application
-  http_basic_authenticate_with name: 'dhh', password: 'secret', except: %i[index show]
+  # http_basic_authenticate_with name: 'dhh', password: 'secret', except: %i[index show]
 
   # Ensure a user is logged in before having access
   # unless, its the article index and show views
