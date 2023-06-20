@@ -35,10 +35,11 @@ class User < ApplicationRecord
   end
 
   # set user privileges within console using:
-  # @user = User.first
-  # @user.role = 1 # moderator
-  # @user.save
-  enum role: %i[user moderator admin]
+  # @user = User.first -> @user.role = 1 # @user.save
+  # guest = non-signed in user
+  # basic = signed in user
+  # admin = superuser with extra features (view/edit/delete user details, edit all articles and comments)
+  enum role: %i[guest basic admin]
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
