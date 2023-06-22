@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'articles#home'
   get 'search', to: 'search#index'
+  get 'admin', to: 'admin_dashboard#index'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
