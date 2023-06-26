@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  user = FactoryBot.create(:user)
+  admin = FactoryBot.create(:admin)
 
   #TODO
   # Admin can do same as 'basic' user plus edit/delete any article & comment
@@ -12,7 +12,7 @@ RSpec.describe ArticlesController, type: :controller do
 
   describe '"Admin" user' do
     before do
-      sign_in user
+      sign_in admin
     end
     describe 'GET #new' do
       it 'renders :new template' do
@@ -36,7 +36,7 @@ RSpec.describe ArticlesController, type: :controller do
               status: 'public',
               created_at: Time.now,
               updated_at: Time.now,
-              user:
+              admin:
             }
           }
         }
@@ -60,7 +60,7 @@ RSpec.describe ArticlesController, type: :controller do
               status: 'public',
               created_at: Time.now,
               updated_at: Time.now,
-              user:
+              admin:
             }
           }
         }

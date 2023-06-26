@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  user = FactoryBot.create(:user)
+  basic = FactoryBot.create(:basic)
   before do
-    sign_in user
+    sign_in basic
   end
 
   describe '"Basic" user' do
@@ -30,7 +30,7 @@ RSpec.describe ArticlesController, type: :controller do
               status: 'public',
               created_at: Time.now,
               updated_at: Time.now,
-              user:
+              basic:
             }
           }
         }
@@ -54,7 +54,7 @@ RSpec.describe ArticlesController, type: :controller do
               status: 'public',
               created_at: Time.now,
               updated_at: Time.now,
-              user:
+              basic:
             }
           }
         }

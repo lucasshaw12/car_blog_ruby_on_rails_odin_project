@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  user = FactoryBot.create(:user)
+  guest = FactoryBot.create(:guest)
 
   describe '"Guest" user' do
 
@@ -48,7 +48,7 @@ RSpec.describe ArticlesController, type: :controller do
             status: 'public',
             created_at: Time.now,
             updated_at: Time.now,
-            user:
+            guest:
           }
         }
       }
