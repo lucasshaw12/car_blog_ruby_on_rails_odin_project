@@ -1,12 +1,7 @@
 <div class="d-flex flex-column">
   <% if current_user %>
   <h1 class="display-3">Hi, <%= current_user.username %></h1>
-
   <h1>Welcome to your Dashboard</h1>
-
-  <% if current_user.admin? %>
-  <p>There are <%= pluralize(User.count, "user") %> on the platform</p>
-  <% end %>
   <% end %>
 
   <div class="row mt-5">
@@ -25,7 +20,7 @@
           <span><small><i>Updated <%= time_ago_in_words(article.updated_at) %> ago</i></small></span>
         </li>
         <% end %>
-      </ul>    
+      </ul>
     </div>
 
     <div class="col-6">
@@ -36,7 +31,7 @@
           <%= comment.body %>
         </li>
         <% end %>
-      </ul>    
+      </ul>
     </div>
   </div>
 </div>

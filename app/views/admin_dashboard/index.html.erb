@@ -1,1 +1,4 @@
 <h1>Admin Dashboard</h1>
+<% if current_user.admin? %>
+  <p>There are <%= pluralize(User.count, "user") %> on the platform</p>
+<% end %>
