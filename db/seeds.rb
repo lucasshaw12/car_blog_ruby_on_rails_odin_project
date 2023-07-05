@@ -72,16 +72,16 @@ def create_articles_for_users(users, number)
       Aliquam vehicula dolor blandit volutpat efficitur. Nulla eu nunc purus.
       Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque iaculis
       venenatis tellus id pharetra. Phasellus at aliquam erat, id finibus est.",
-      status: 'public', created_at: Time.now, updated_at: Time.now, user_id: i)
+                            status: 'public', created_at: Time.now, updated_at: Time.now, user_id: i)
     end
   end
 end
 
 def create_comments_for_articles(articles, users, number)
   articles.map do |article|
-    comment_users = users.reject{ |user| user == article.user}
+    comment_users = users.reject { |user| user == article.user }
     number.times.map do |i|
-      article.comments.create!(user: comment_users.shuffle.first, body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+      article.comments.create!(user: comment_users.sample, body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
       quis mauris turpis. Curabitur nec cursus lectus. In purus elit, bibendum in
       odio in, interdum porta neque. Nullam ultricies metus id lobortis interdum.
       Mauris volutpat nisl ac felis interdum ornare. Aenean interdum sollicitudin

@@ -4,7 +4,6 @@ RSpec.describe ArticlesController, type: :controller do
   guest = FactoryBot.create(:guest)
 
   describe '"Guest" user' do
-
     describe 'GET #show' do
       let(:article) { FactoryBot.create(:article) }
 
@@ -40,7 +39,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'POST #create' do
-      let(:params) {
+      let(:params) do
         {
           article: {
             title: 'New article title',
@@ -51,10 +50,10 @@ RSpec.describe ArticlesController, type: :controller do
             guest:
           }
         }
-      }
+      end
 
       it 'redirects to :sign_in template' do
-        post :create, params: params
+        post(:create, params:)
         expect(response).to redirect_to(new_user_session_path)
       end
     end
@@ -86,6 +85,5 @@ RSpec.describe ArticlesController, type: :controller do
         expect(response).to redirect_to(new_user_session_path)
       end
     end
-
   end
 end

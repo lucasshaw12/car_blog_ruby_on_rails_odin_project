@@ -7,7 +7,6 @@ RSpec.describe ArticlesController, type: :controller do
   end
 
   describe '"Basic" user' do
-
     describe 'GET #new' do
       it 'renders :new template' do
         get :new
@@ -22,7 +21,7 @@ RSpec.describe ArticlesController, type: :controller do
 
     describe 'POST #create' do
       context 'with valid params' do
-        let(:params) {
+        let(:params) do
           {
             article: {
               title: 'New article title',
@@ -33,20 +32,20 @@ RSpec.describe ArticlesController, type: :controller do
               basic:
             }
           }
-        }
+        end
         it 'creates an article' do
           expect { post :create, params: }.to change { Article.count }.by(1)
         end
 
         it 'redirects to article :show template' do
-          post :create, params: params
+          post(:create, params:)
           expect(response).to redirect_to(article_path(assigns[:article]))
           expect(response).to have_http_status(302)
         end
       end
 
       context 'with invalid params' do
-        let(:params) {
+        let(:params) do
           {
             article: {
               title: '',
@@ -57,13 +56,13 @@ RSpec.describe ArticlesController, type: :controller do
               basic:
             }
           }
-        }
+        end
         it 'does not create an article' do
           expect { post :create, params: }.to change { Article.count }.by(0)
         end
 
         it 'renders :new template' do
-          post :create, params: params
+          post(:create, params:)
           expect(response).to render_template(:new)
           expect(response).to have_http_status(422)
         end
@@ -71,7 +70,6 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'GET #edit' do
-
       let(:article) { FactoryBot.create(:article) }
 
       it 'renders :edit template' do
