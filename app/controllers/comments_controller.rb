@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  # Ensure a user is logged in before having access
+  # unless, its the article index and show views
+  before_action :authenticate_user!
   before_action :set_post
 
   def create

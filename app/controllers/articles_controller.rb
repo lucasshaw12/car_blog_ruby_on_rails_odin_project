@@ -1,4 +1,9 @@
 class ArticlesController < ApplicationController
+  # Ensure a user is logged in before having access
+  # unless, its the article index and show views
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @articles = Article.all
   end

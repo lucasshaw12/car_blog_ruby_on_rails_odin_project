@@ -43,7 +43,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
-    self.role ||= :user
+    self.role ||= :guest
   end
 
   def self.ransackable_attributes(_auth_object = nil)
