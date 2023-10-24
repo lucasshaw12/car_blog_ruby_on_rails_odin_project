@@ -1,22 +1,24 @@
 # README
 
-Guide followed from: 
-- https://www.theodinproject.com/lessons/ruby-on-rails-blog-app 
-&
-- https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database
-&
-- https://www.youtube.com/playlist?list=PL3mtAHT_eRezB9fnoIcKS4vYFjm23vddb
-&
-- https://www.youtube.com/playlist?list=PLm8ctt9NhMNV75T9WYIrA6m9I_uw7vS56
+* Guide followed from: 
+
+https://www.theodinproject.com/lessons/ruby-on-rails-blog-app 
+
+https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database
+
+https://www.youtube.com/playlist?list=PL3mtAHT_eRezB9fnoIcKS4vYFjm23vddb
+
+https://www.youtube.com/playlist?list=PLm8ctt9NhMNV75T9WYIrA6m9I_uw7vS56
 
 
 * Ruby version
+
 3.2.2
 
 * System dependencies  
 See GemFile and Gemfile.lock
 
-* Configuration
+<!-- * Configuration -->
 
 
 * Database creation  
@@ -29,13 +31,13 @@ this provides 10 dummy user accounts, each with 10 articles and 10 comments spre
 
 Password is "password"
 
-* Database initialization
+<!-- * Database initialization -->
 
 
-* How to run the test suite
+<!-- * How to run the test suite -->
 
 
-* Services (job queues, cache servers, search engines, etc.)
+<!-- * Services (job queues, cache servers, search engines, etc.) -->
 
 
 * Deployment instructions  
