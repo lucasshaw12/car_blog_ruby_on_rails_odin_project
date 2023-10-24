@@ -25,7 +25,11 @@ See GemFile and Gemfile.lock
 
 
 * Database creation
-
+run seed command to populate the database with dummy users, articles and comments
+`rails db:seed`
+this provides 10 dummy user accounts:
+'user_email0@email.com' up to 'user_email9@email.com'
+password is "password"
 
 * Database initialization
 
@@ -37,7 +41,7 @@ See GemFile and Gemfile.lock
 
 
 * Deployment instructions
-Run "rails s" in terminal
+In the root file directory, run "rails s" in terminal
 
 * GIT repo
 url = https://github.com/lucas.shaw12/rails_odin_project

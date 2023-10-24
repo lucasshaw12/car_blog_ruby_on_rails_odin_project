@@ -3,6 +3,8 @@ class AdminDashboardController < ApplicationController
   before_action :admin_user_access
 
   def index
+    @user = User.includes(:articles, :comments)
+    
   end
 
   private
