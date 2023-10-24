@@ -7,29 +7,27 @@ Guide followed from:
 &
 - https://www.youtube.com/playlist?list=PL3mtAHT_eRezB9fnoIcKS4vYFjm23vddb
 &
-- 
-https://www.youtube.com/playlist?list=PLm8ctt9NhMNV75T9WYIrA6m9I_uw7vS56
+- https://www.youtube.com/playlist?list=PLm8ctt9NhMNV75T9WYIrA6m9I_uw7vS56
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
 
 * Ruby version
 3.2.2
 
-* System dependencies
+* System dependencies  
 See GemFile and Gemfile.lock
 
 * Configuration
 
 
-* Database creation
-run seed command to populate the database with dummy users, articles and comments
-`rails db:seed`
-this provides 10 dummy user accounts:
+* Database creation  
+
+Run the seed command to populate the database with dummy users, articles and comments with
+`rails db:seed`,
+this provides 10 dummy user accounts, each with 10 articles and 10 comments spread across each other user's articles:
+
 'user_email0@email.com' up to 'user_email9@email.com'
-password is "password"
+
+Password is "password"
 
 * Database initialization
 
@@ -40,7 +38,8 @@ password is "password"
 * Services (job queues, cache servers, search engines, etc.)
 
 
-* Deployment instructions
+* Deployment instructions  
+
 In the root file directory, run "rails s" in terminal
 
 * GIT repo
