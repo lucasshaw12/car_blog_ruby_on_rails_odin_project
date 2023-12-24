@@ -73,15 +73,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Following the guidance from [Rails getting starter](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as an application for articles. With the ability to comment, and use search filters to find content. We hope to develop and improve this application as a learning platform for those who love Ruby onm Rails and wish to make great web applications. 
+Following the guidance from [Rails getting starter](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as an application for articles. With the ability to comment, and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
+
+We hope to develop and improve this application as a learning platform for those who love Ruby onm Rails and wish to make great web applications. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-### Built With
+## Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 [![Ruby][Rails-badge]][Ruby-on-Rails-url]
 [![Bootstrap][Bootstrap-badge]][Bootstrap-url]
@@ -95,6 +96,34 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
+
+The application has a seeds.rb file to create dummy users with 5 article posts and comments. The comments will be posted on the other 4 users articles. 
+
+### Setting up the database:
+
+Create the database with
+
+```sh
+rake db:create
+```
+
+Run migrations
+
+```sh
+rake db:migrate
+```
+
+Seed the database with users with their articles and comments
+
+```sh
+rake db:seed
+```
+
+If anm any errors occur you can drop the database and follow the above steps again.
+
+```sh
+rake db:drop
+```
 
 ### Prerequisites
 
@@ -154,7 +183,8 @@ Following the env.example file, create a local .env file and and copy the exampl
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Sign up to create a user before you can interact with the application
+### Signing up 
+Sign up to create a user before you can interact with the application. After clicking 'sign up' an authentication token will be displayed within your terminal. Visit the given url to submit the token to verify your user. You MUST do this before you can sign in. 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
