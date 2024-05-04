@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database
 # with its default values. The data can then be loaded with the bin/rails
 # db:seed command (or created alongside the database with db:setup).
@@ -44,7 +46,7 @@
 
 def create_users(number)
   number.times.map do |i|
-    User.create!(id: "#{i}", email: "user_email#{i}@email.com", password: 'password', created_at: Time.now,
+    User.create!(id: i.to_s, email: "user_email#{i}@email.com", password: 'password', created_at: Time.now,
                  updated_at: Time.now, username: "#{i}_username", confirmed_at: Time.now)
   end
 end

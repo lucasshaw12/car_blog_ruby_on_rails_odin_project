@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   # Ensure a user is logged in before having access
   # unless, its the article index and show views

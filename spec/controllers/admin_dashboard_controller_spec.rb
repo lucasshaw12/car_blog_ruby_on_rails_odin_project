@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AdminDashboardController, type: :controller do
   admin_user = FactoryBot.create(:admin)
   describe 'GET #index' do
-
     context 'admin user' do
       before do
         sign_in admin_user

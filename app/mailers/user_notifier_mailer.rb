@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserNotifierMailer < ApplicationMailer
   default from: 'shaw51@hotmail.co.uk'
 
