@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   # Set basic http auth before anyone can access the application
   # http_basic_authenticate_with name: 'dhh', password: 'secret', except: %i[index show]
-
 
   before_action :set_notifications, if: :current_user
   before_action :set_query
