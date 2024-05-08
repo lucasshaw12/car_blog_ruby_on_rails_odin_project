@@ -26,7 +26,6 @@ RSpec.describe Visible do
       end
 
       it 'returns to article count' do
-        debugger
         expect(Article.public_count).to eq 1
       end
     end
