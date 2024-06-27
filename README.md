@@ -167,14 +167,6 @@ Following the env.example file, create a local .env file and and copy the exampl
    ```sh
    cd rails_odin_project
    ```
-3. Build app using Docker (Ensure Docker Daemon is running)
-   ```sh
-   docker-compose build
-   ```
-4. Run using Docker
-   ```sh
-   docker-compose up
-   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -217,7 +209,15 @@ Sign up to create a user before you can interact with the application. After cli
 ## Guides
 
 ### Docker
-Used this [guide](https://dennmart.com/articles/building-lean-docker-images-for-rails-apps/#:~:text=Which%20Docker%20image%20to%20use,tools%20like%20Bundler%20pre%2Dinstalled.) to create the docker image for the application
+
+The application can be run using Docker for configuration exercises and further development, stored in the Dockerfile. 
+
+1. Run the Docker container. The port definition within the command publishes a container's port(s) to the host
+   ```sh
+   docker run -p 3000:3000 rails-car-app
+   ```
+
+Used this [guide](https://www.youtube.com/watch?v=J7hUHnQtFNo) to create the docker image for the application
 
 
 <!-- CONTRIBUTING -->

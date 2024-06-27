@@ -2,17 +2,15 @@ FROM ruby:3.2.2
 
 RUN apt-get update -qq && apt-get install -y build-essential apt-utils libpq-dev nodejs
 
-WORKDIR /docker/app
+WORKDIR /app
 
 RUN gem install bundler
 
-COPY Gemfile* ./
+COPY . /app/
 
 RUN bundle install
 
-ADD . /docker/app
-
-ARG DEFAULT_PORT 3000
+ENTRYPOINT ["bin/rails"]
+CMD ["s", "-b", "0.0.0.0"]
 
 EXPOSE 3000
-CMD ["bundle", "exec", "rails", "s", "-p", "3000"]
