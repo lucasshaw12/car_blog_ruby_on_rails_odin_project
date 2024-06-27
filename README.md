@@ -97,7 +97,7 @@ We hope to develop and improve this application as a learning platform for those
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
-The application has a seeds.rb file to create dummy users with 5 article posts and comments. The comments will be posted on the other 4 users articles. 
+The application has a seeds.rb file to create dummy users with article posts and comments. The comments will be posted on the other users articles. 
 
 ### Setting up the database:
 
@@ -119,7 +119,7 @@ Seed the database with users with their articles and comments
 rake db:seed
 ```
 
-If anm any errors occur you can drop the database and follow the above steps again.
+If any errors occur you can drop the database and follow the above steps again.
 
 ```sh
 rake db:drop
