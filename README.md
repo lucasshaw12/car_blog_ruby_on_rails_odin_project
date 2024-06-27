@@ -214,6 +214,11 @@ Sign up to create a user before you can interact with the application. After cli
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## Guides
+
+### Docker
+Used this [guide](https://dennmart.com/articles/building-lean-docker-images-for-rails-apps/#:~:text=Which%20Docker%20image%20to%20use,tools%20like%20Bundler%20pre%2Dinstalled.) to create the docker image for the application
+
 
 <!-- CONTRIBUTING -->
 ## Contributing
