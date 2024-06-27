@@ -73,9 +73,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Following the guidance from [Rails getting starter](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as an application for articles. With the ability to comment, and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
+Following the guidance from [Rails getting started](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as an application for articles. With the ability to comment, and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
 
-We hope to develop and improve this application as a learning platform for those who love Ruby onm Rails and wish to make great web applications. 
+We hope to develop and improve this application as a learning platform for those who love Ruby on Rails and wish to make great web applications. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
