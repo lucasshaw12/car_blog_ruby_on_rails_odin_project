@@ -83,7 +83,6 @@ We hope to develop and improve this application as a learning platform for those
 
 ## Built With
 
-
 [![Ruby][Rails-badge]][Ruby-on-Rails-url]
 [![Bootstrap][Bootstrap-badge]][Bootstrap-url]
 
@@ -180,8 +179,7 @@ Sign up to create a user before you can interact with the application. After cli
 
 ### Testing and test coverage
 - [Brakeman](https://github.com/presidentbeef/brakeman) checks for code vulnerabilities. This should be run before merge to main for non-local databases. To see a full breakdown of the scan run: ```brakeman``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
-
-### Vulnerability checks 
+ 
 - [Simplecov](https://github.com/simplecov-ruby/simplecov) runs when a test is executed ```bundle exec rspec```. To see a full breakdown of test coverage run ```open coverage/index.html``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -198,8 +196,8 @@ Sign up to create a user before you can interact with the application. After cli
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- ROADMAP -->
-## Roadmap
+<!-- Known issues -->
+## Known issues
 
 ~~See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).~~
 
@@ -208,7 +206,15 @@ Sign up to create a user before you can interact with the application. After cli
 
 ## Guides
 
-### Docker
+### Run with bare metal installation
+
+The application can be run using a bare metal installation. 
+
+   ```sh
+   rails s
+   ```
+
+### Run with Docker
 
 The application can be run using Docker for configuration exercises and further development, stored in the Dockerfile. 
 
