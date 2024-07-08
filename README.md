@@ -41,41 +41,12 @@
   </p>
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Following the guidance from [Rails getting started](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as an application for articles. With the ability to comment, and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
+Following the guidance from [Rails getting started](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as a basic application for managing articles. With the ability to comment and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
 
-We hope to develop and improve this application as a learning platform for those who love Ruby on Rails and wish to make great web applications. 
+We hope to develop and improve this application as a learning platform for those who love building web applications with Ruby on Rails. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -88,7 +59,19 @@ We hope to develop and improve this application as a learning platform for those
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- CURRENT FUNCTIONALTY-->
+## Current functionality
 
+Article CRUD with comments
+User registration with email verification
+User accounts 
+
+TODO:
+Fix searchbar
+Editing comments
+Prevent editing of other users articles
+User roles
+User avatars
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -126,10 +109,6 @@ rake db:drop
 
 ### Prerequisites
 
-### .env
-
-Following the env.example file, create a local .env file and and copy the example contents into your .env file.
-
 ### Installation
 
 1. Clone the repo
@@ -160,12 +139,6 @@ Sign up to create a user before you can interact with the application. After cli
 
 <!-- POTENTIAL ISSUES -->
 ## Potential Issues
-
-- Upon receiving a _‘no_such_table’_, this action creates tables for applications without migrations:
-
-  ```
-  python3 manage.py migrate --run-syncdb
-  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
