@@ -67,7 +67,6 @@ User registration with email verification
 User accounts 
 
 TODO:
-Fix searchbar
 Editing comments
 Prevent editing of other users articles
 User roles
