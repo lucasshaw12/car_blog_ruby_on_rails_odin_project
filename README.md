@@ -41,41 +41,12 @@
   </p>
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Following the guidance from [Rails getting started](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as an application for articles. With the ability to comment, and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
+Following the guidance from [Rails getting started](https://guides.rubyonrails.org/getting_started.html#using-a-model-to-interact-with-the-database). This small project functions as a basic application for managing articles. With the ability to comment and use search filters to find content. You can also edit your user details and add an avatar as your profile picture. 
 
-We hope to develop and improve this application as a learning platform for those who love Ruby on Rails and wish to make great web applications. 
+We hope to develop and improve this application as a learning platform for those who love building web applications with Ruby on Rails. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,13 +54,24 @@ We hope to develop and improve this application as a learning platform for those
 
 ## Built With
 
-
 [![Ruby][Rails-badge]][Ruby-on-Rails-url]
 [![Bootstrap][Bootstrap-badge]][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- CURRENT FUNCTIONALTY-->
+## Current functionality
 
+Article CRUD with comments
+User registration with email verification
+User accounts 
+
+TODO:
+Fix searchbar
+Editing comments
+Prevent editing of other users articles
+User roles
+User avatars
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -127,36 +109,6 @@ rake db:drop
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* [gunicorn](https://pypi.org/project/gunicorn/)
-  ```sh
-  pip3 install gunicorn
-  ```
-* [whitenoise](https://pypi.org/project/whitenoise/)
-  ```sh
-  pip3 install whitenoise
-  ```
-* [django-crispy-forms](https://pypi.org/project/django-crispy-forms/)
-  ```sh
-  pip3 install django-crispy-forms  
-  ```
-* [crispy-bootstrap](https://pypi.org/project/crispy-bootstrap5/)
-  ```sh
-  pip3 install crispy-bootstrap5  
-  ```
-* [django-taggit](https://pypi.org/project/django-taggit/)  
-  ```sh
-  pip3 install django-taggit
-  ```
-* [environs](https://pypi.org/project/environs/)
-  ```sh
-  pip3 install environs
-  ```  
-
-### .env
-
-Following the env.example file, create a local .env file and and copy the example contents into your .env file.
-
 ### Installation
 
 1. Clone the repo
@@ -166,14 +118,6 @@ Following the env.example file, create a local .env file and and copy the exampl
 2. Navigate into the project directory
    ```sh
    cd rails_odin_project
-   ```
-3. Build app using Docker (Ensure Docker Daemon is running)
-   ```sh
-   docker-compose build
-   ```
-4. Run using Docker
-   ```sh
-   docker-compose up
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -188,8 +132,7 @@ Sign up to create a user before you can interact with the application. After cli
 
 ### Testing and test coverage
 - [Brakeman](https://github.com/presidentbeef/brakeman) checks for code vulnerabilities. This should be run before merge to main for non-local databases. To see a full breakdown of the scan run: ```brakeman``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
-
-### Vulnerability checks 
+ 
 - [Simplecov](https://github.com/simplecov-ruby/simplecov) runs when a test is executed ```bundle exec rspec```. To see a full breakdown of test coverage run ```open coverage/index.html``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -197,22 +140,37 @@ Sign up to create a user before you can interact with the application. After cli
 <!-- POTENTIAL ISSUES -->
 ## Potential Issues
 
-- Upon receiving a _‘no_such_table’_, this action creates tables for applications without migrations:
-
-  ```
-  python3 manage.py migrate --run-syncdb
-  ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- ROADMAP -->
-## Roadmap
+<!-- Known issues -->
+## Known issues
 
 ~~See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).~~
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+## Guides
+
+### Run with bare metal installation
+
+The application can be run using a bare metal installation. 
+
+   ```sh
+   rails s
+   ```
+
+### Run with Docker
+
+The application can be run using Docker for configuration exercises and further development, stored in the Dockerfile. 
+
+1. Run the Docker container. The port definition within the command publishes a container's port(s) to the host
+   ```sh
+   docker run -p 3000:3000 rails-car-app
+   ```
+
+Used this [guide](https://www.youtube.com/watch?v=J7hUHnQtFNo) to create the docker image for the application
 
 
 <!-- CONTRIBUTING -->
