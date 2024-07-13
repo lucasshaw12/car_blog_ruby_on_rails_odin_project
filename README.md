@@ -67,9 +67,6 @@ User registration with email verification
 User accounts 
 
 TODO:
-Editing comments
-
-Prevent editing of other users articles
 
 User roles
 

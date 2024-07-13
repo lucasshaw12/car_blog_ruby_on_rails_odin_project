@@ -72,6 +72,7 @@ yarn-debug.log*
 # Ignore temp sqlite files
 db/development.sqlite3-shm
 db/development.sqlite3-wal
+db/development 2.sqlite3-wal
 
 # Jetbrains - Rubymine IntelliJ config files
 .idea
