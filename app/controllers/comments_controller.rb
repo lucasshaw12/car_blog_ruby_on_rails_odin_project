@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # Ensure a user is logged in before having access
   # unless, its the article index and show views
   before_action :authenticate_user!
-  before_action :set_post
+  before_action :set_post, on: %i[create destroy]
 
   def create
     @comment = @article.comments.build(comment_params)
@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
   # Find the article which this comment was assigned to
   # :article_id exists in comments db schema
   def set_post
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:article_id])
   end
 
   # params hash ensures the given parameter (e.g :comment) is given
