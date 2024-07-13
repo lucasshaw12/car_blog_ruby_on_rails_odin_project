@@ -15,7 +15,7 @@ require 'devise'
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
   SimpleCov.start 'rails'
-  puts "required simplecov"
+  puts 'required simplecov'
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
