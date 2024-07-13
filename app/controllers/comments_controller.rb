@@ -20,7 +20,6 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    debugger
     @comment = @article.comments.find(params[:id])
   end
 
