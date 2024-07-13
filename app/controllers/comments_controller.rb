@@ -19,13 +19,17 @@ class CommentsController < ApplicationController
     redirect_to article_path(@article), status: :see_other, notice: 'Comment deleted successfully'
   end
 
+  def edit
+    @comment = @article.comments.find(params[:id])
+  end
+
   # All private methods ensure only the class they're initialized in can access the method
   private
 
   # Find the article which this comment was assigned to
   # :article_id exists in comments db schema
   def set_post
-    @article = Article.find(params[:article_id])
+    @article = Article.find(params[:id])
   end
 
   # params hash ensures the given parameter (e.g :comment) is given
