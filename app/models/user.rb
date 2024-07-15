@@ -40,7 +40,7 @@ class User < ApplicationRecord
   # @user = User.first -> @user.role = 1 # @user.save
   # guest = non-signed in user
   # basic = signed in user
-  # admin = superuser with extra features (view/edit/delete user details, edit all articles and comments)
+  # admin = superuser with extra features (view/edit/delete user details, delete all articles and comments)
   enum role: %i[guest basic admin]
   after_initialize :set_default_role, if: :new_record?
 
