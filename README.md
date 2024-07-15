@@ -69,6 +69,11 @@ User accounts
 TODO:
 
 User roles
+- "Admin". Full service access. CRUD all articles. Edit and delete users. Create and delete all comments. 
+
+- "Basic". Create, edit and delete own articles. Delete own comments. Read all articles and comments.
+
+- "Guest". View public articles and comments only. 
 
 User avatars
 
@@ -128,6 +133,15 @@ rake db:drop
 
 ### Signing up 
 Sign up to create a user before you can interact with the application. After clicking 'sign up' an authentication token will be displayed within your terminal. Visit the given url to submit the token to verify your user. You MUST do this before you can sign in. 
+
+### User roles
+There are 3 different types of users. "Admin", "Basic" and "Guest". 
+
+Admin can see all posts whether private or public, and can also change the roles of other users. Can write posts and comments. Can edit and delete other users articles and comments.
+
+Basic users can see all posts whether private or public, but cannot modify other users. Can write articles or comments.
+
+Guests can only see public posts and comments. No other functionality.
 
 ### Testing and test coverage
 - [Brakeman](https://github.com/presidentbeef/brakeman) checks for code vulnerabilities. This should be run before merge to main for non-local databases. To see a full breakdown of the scan run: ```brakeman``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
