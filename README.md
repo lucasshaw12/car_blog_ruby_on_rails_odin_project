@@ -148,6 +148,9 @@ Guests can only see public posts and comments. No other functionality.
  
 - [Simplecov](https://github.com/simplecov-ruby/simplecov) runs when a test is executed ```bundle exec rspec```. To see a full breakdown of test coverage run ```open coverage/index.html``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
 
+### Linting and Style
+- [Rubocop](https://gist.github.com/jhass/a5ae80d87f18e53e7b56#file-rubocop-yml) for code style and linting. The ```rubocop.yaml``` config file sets the desired cops. To detect all offences enter the command ```rubocop```. To detect and change offences run ```rubocop -A```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- POTENTIAL ISSUES -->
@@ -231,6 +234,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * https://github.com/othneildrew/Best-README-Template
 * [Rails Getting started](https://guides.rubyonrails.org/getting_started.html)
 * [Rails Odin Project](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails)
+* [Rubocop config](https://gist.github.com/jhass/a5ae80d87f18e53e7b56#file-rubocop-yml)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

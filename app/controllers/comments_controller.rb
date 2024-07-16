@@ -10,13 +10,13 @@ class CommentsController < ApplicationController
     @comment = @article.comments.build(comment_params)
     @comment.user = current_user
     @comment.save
-    redirect_to article_path(@article), notice: 'Comment added successfully'
+    redirect_to article_path(@article), notice: "Comment added successfully"
   end
 
   def destroy
     @comment = @article.comments.find(params[:id])
     @comment.destroy
-    redirect_to article_path(@article), status: :see_other, notice: 'Comment deleted successfully'
+    redirect_to article_path(@article), status: :see_other, notice: "Comment deleted successfully"
   end
 
   def edit

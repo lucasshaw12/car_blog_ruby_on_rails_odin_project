@@ -17,9 +17,9 @@ class User < ApplicationRecord
     if @user.save
       # Send the email
       UserNotifierMailer.send_signup_email(@user).deliver
-      redirect_to(@user, notice: 'User created')
+      redirect_to(@user, notice: "User created")
     else
-      render action: 'new'
+      render action: "new"
     end
   end
 
@@ -41,14 +41,14 @@ class User < ApplicationRecord
   # guest = non-signed in user
   # basic = signed in user
   # admin = superuser with extra features (view/edit/delete user details, delete all articles and comments)
-  enum role: %i[guest basic admin]
+  enum role: {guest: 0, basic: 1, admin: 2}
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
     self.role ||= :guest
   end
 
-  def self.ransackable_attributes(_auth_object = nil)
-    ['username']
+  def self.ransackable_attributes(_auth_object=nil)
+    ["username"]
   end
 end

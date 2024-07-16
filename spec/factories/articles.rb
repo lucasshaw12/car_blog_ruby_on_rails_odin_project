@@ -6,7 +6,7 @@ FactoryBot.define do
     body { Faker::Lorem.paragraphs }
     created_at { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
     updated_at { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
-    status { 'public' }
+    status { "public" }
     association :user, factory: :user
   end
 end
