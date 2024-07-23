@@ -1,5 +1,18 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: articles
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  body       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  status     :string
+#  user_id    :integer          not null
+#  views      :integer          default(0)
+#
 require "rails_helper"
 
 RSpec.describe Article, type: :model do
