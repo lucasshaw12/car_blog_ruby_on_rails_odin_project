@@ -1,5 +1,24 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  confirmation_token     :string
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string
+#  role                   :integer          default("guest")
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  username               :string
+#
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -17,9 +36,9 @@ class User < ApplicationRecord
     if @user.save
       # Send the email
       UserNotifierMailer.send_signup_email(@user).deliver
-      redirect_to(@user, notice: 'User created')
+      redirect_to(@user, notice: "User created")
     else
-      render action: 'new'
+      render action: "new"
     end
   end
 
@@ -40,15 +59,15 @@ class User < ApplicationRecord
   # @user = User.first -> @user.role = 1 # @user.save
   # guest = non-signed in user
   # basic = signed in user
-  # admin = superuser with extra features (view/edit/delete user details, edit all articles and comments)
-  enum role: %i[guest basic admin]
+  # admin = superuser with extra features (view/edit/delete user details, delete all articles and comments)
+  enum role: {guest: 0, basic: 1, admin: 2}
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
     self.role ||= :guest
   end
 
-  def self.ransackable_attributes(_auth_object = nil)
-    ['username']
+  def self.ransackable_attributes(_auth_object=nil)
+    ["username"]
   end
 end

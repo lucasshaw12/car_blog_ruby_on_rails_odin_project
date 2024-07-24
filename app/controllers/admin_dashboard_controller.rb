@@ -11,7 +11,7 @@ class AdminDashboardController < ApplicationController
   private
 
   def admin_user_access
-    if current_user.role == 'admin'
+    if current_user.role == "admin"
       render :index
     else
       redirect_to new_user_session_path
