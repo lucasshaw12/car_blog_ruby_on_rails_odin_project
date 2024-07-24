@@ -23,7 +23,7 @@
   <div class="input-group mb-3 w-25">
   <span class="input-group-text"><%= f.label :role %>
   </span>
-    <%= f.select :role, options_for_select(['Guest', 'Basic', 'Admin']), {}, :class => 'form-select', disabled: !current_user.admin? %>
+    <%= f.select :role, options_for_select(['guest', 'basic', 'admin']), {}, :class => 'form-select', disabled: !current_user.admin? %>
   </div>
 
   <div class="input-group mb-3 w-50">
