@@ -16,7 +16,10 @@
       Upload/Change avatar <%= f.file_field :avatar %>
     </span>
   <div class="form-text">(must be PNG, JPEG or JPG format)</div>
+  
   <hr>
+  
+  <label class="form-label">User details</label>
   <div class="input-group mb-3 w-25">
   <span class="input-group-text"><%= f.label :role %>
   </span>
@@ -36,7 +39,6 @@
     </div>
   </div>
 
-  <hr>
   <div class="input-group mb-3 w-50">
   <span class="input-group-text"><%= f.label :username %>
   </span>
@@ -44,6 +46,8 @@
   </div>
 
   <hr>
+
+  <label class="form-label">User password</label>
   <div class="input-group mb-3 w-50">
   <span class="input-group-text"><%= f.label :password %>
   </span>
@@ -63,7 +67,10 @@
   </span>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "New password confirmation", :class => "form-control" %>
   </div>
+  
   <hr>
+
+  <label>Confirm password to save changes</label>
   <div class="input-group mb-3 w-50">
   <span class="input-group-text"><%= f.label :current_password %> 
   </span>
