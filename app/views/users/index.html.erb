@@ -1,0 +1,11 @@
+<h2 class="mb-3">All Users</h2>
+
+<lead>The forum has <%= pluralize(User.count, "user")%></lead>
+
+<ul class="list-group list-group-flush w-50">
+  <% @users.each do |user| %>
+      <li class="list-group-item">
+        <span><%= link_to user.username, edit_users_path %></span>
+      </li>
+  <% end %>
+</ul>
