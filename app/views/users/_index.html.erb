@@ -1,7 +1,7 @@
 <lead><%= present_num_of_users %></lead>
 
 <ul class="list-group list-group-flush w-50">
-  <% User.all.each do |user| %>
+  <% User.all.where(role: 1).each do |user| %>
       <li class="list-group-item">
         <span><%= link_to user.username, user_path(user) %></span> 
       </li>

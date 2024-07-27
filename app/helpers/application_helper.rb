@@ -15,6 +15,6 @@ module ApplicationHelper
   end
 
   def present_num_of_users
-    "The forum has #{pluralize(User.all.where.not(role: 2).count, 'user')}"
+    "The forum has #{pluralize(User.all.where(role: 1).count, 'user')}"
   end
 end
