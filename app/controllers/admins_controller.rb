@@ -8,6 +8,10 @@ class AdminsController < ApplicationController
     @user = User.includes(:articles, :comments)
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
   def admin_user_access
