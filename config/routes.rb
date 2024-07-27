@@ -4,14 +4,20 @@
 #
 
 Rails.application.routes.draw do
-  get "users/index"
-  root "articles#home"
-  get "search", to: "search#index"
-  get "admin", to: "admin_dashboard#index"
+  root 'articles#home'
+  get 'search', to: 'search#index'
+
+  resources :users
+
+  resources :admins do
+    collection do
+      get :home
+    end
+  end
 
   devise_for :users, controllers: {
-    sessions: "users/sessions",
-    registrations: "users/registrations"
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   # allows for chained url routes

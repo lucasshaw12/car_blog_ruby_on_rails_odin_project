@@ -5,7 +5,8 @@
 <ul class="list-group list-group-flush w-50">
   <% @users.each do |user| %>
       <li class="list-group-item">
-        <span><%= link_to user.username, edit_users_path %></span>
+        <span><%= link_to user.username %></span> 
+        // TODO: add link
       </li>
   <% end %>
 </ul>

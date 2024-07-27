@@ -39,7 +39,7 @@
         </li>
           <% if current_user.admin? %>
         <li class="nav-item">
-          <%= link_to "Admin dashboard", users_index_path, :class => "btn btn-outline-secondary" %>
+          <%= link_to "Admin dashboard", home_admins_path, :class => "btn btn-outline-secondary" %>
         </li>
           <% end %>
         <% else %>

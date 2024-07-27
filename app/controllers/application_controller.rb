@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   # Set basic http auth before anyone can access the application
   # http_basic_authenticate_with name: 'dhh', password: 'secret', except: %i[index show]
 
