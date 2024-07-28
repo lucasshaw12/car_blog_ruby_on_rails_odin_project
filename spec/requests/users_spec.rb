@@ -1,24 +1,44 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
+  admin_user = FactoryBot.create(:admin)
+  guest_user = FactoryBot.create(:guest)
+  basic_user = FactoryBot.create(:basic)
+
   describe 'GET /index' do
     context 'when logged in as admin user' do
-      user = FactoryBot.create(:admin)
+      before do
+        sign_in admin_user
+      end
 
-      it 'gets list of all users' do
-        get users_index_path
+      it 'renders admin homepage' do
+        get home_admins_path
         expect(response).to have_http_status(:successful)
-        expect(response.body).to include(user.email)
+        expect(response).to render_template :home
       end
     end
 
     context 'when logged in as guest user' do
-      pending 'redirects to the home page' do
+      before do
+        sign_in guest_user
+      end
+
+      it 'redirects to the sign in page' do
+        get home_admins_path
+        expect(response).to have_http_status(:redirect)
+        expect(response).to redirect_to user_session_path
       end
     end
 
     context 'when logged in as basic user' do
-      pending 'redirects to the home page' do
+      before do
+        sign_in basic_user
+      end
+
+      it 'redirects to the sign in' do
+        get home_admins_path
+        expect(response).to have_http_status(:redirect)
+        expect(response).to redirect_to user_session_path
       end
     end
   end

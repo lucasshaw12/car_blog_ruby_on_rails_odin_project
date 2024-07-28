@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe AdminDashboardController, type: :controller do
+RSpec.describe AdminsController, type: :controller do
   admin_user = FactoryBot.create(:admin)
   describe 'GET #index' do
     context 'admin user' do
@@ -10,14 +10,14 @@ RSpec.describe AdminDashboardController, type: :controller do
         sign_in admin_user
       end
       it 'renders the :admin template' do
-        get :index
-        expect(response).to render_template(:index)
+        get :home
+        expect(response).to render_template(:home)
       end
     end
 
     context 'non admin user' do
       it 'redirects to root route' do
-        get :index
+        get :home
         expect(response).to redirect_to(new_user_session_path)
       end
     end
