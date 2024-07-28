@@ -3,7 +3,7 @@
 <ul class="list-group list-group-flush w-50">
   <% User.all.where(role: 1).each do |user| %>
       <li class="list-group-item">
-        <span><%= link_to user.username, user_path(user) %></span> 
+        <span><%= link_to user.username %></span> 
       </li>
   <% end %>
 </ul>

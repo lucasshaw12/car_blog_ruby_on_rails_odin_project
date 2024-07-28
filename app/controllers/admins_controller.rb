@@ -4,13 +4,13 @@ class AdminsController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_user_access
 
-  def index
-    @user = User.includes(:articles, :comments)
-  end
+  # def index
+  # @user = User.includes(:articles, :comments)
+  # end
 
-  def show
-    @user = User.find(params[:id])
-  end
+  # def show
+  # @user = User.find(params[:id])
+  # end
 
   private
 

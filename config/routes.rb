@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'articles#home'
   get 'search', to: 'search#index'
 
-  resources :users
+  # resources :users, only: %w[index]
 
   resources :admins do
     collection do
