@@ -1,6 +1,6 @@
-<h1>All Articles</h1>
+<h2 class="mb-3">Articles</h2>
 
-<lead>The forum has <%= pluralize(Article.count, "article")%></lead>
+<lead><%= present_num_of_articles %></lead>
 
 <ul class="list-group list-group-flush w-50">
   <% @articles.each do |article| %>

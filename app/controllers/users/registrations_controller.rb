@@ -48,7 +48,7 @@ module Users
 
     # If you have extra params to permit, append them to the sanitizer.
     def configure_account_update_params
-      devise_parameter_sanitizer.permit(:account_update, keys: %i[username avatar])
+      devise_parameter_sanitizer.permit(:account_update, keys: %i[username avatar role])
     end
 
     # The path used after sign up.
@@ -60,5 +60,9 @@ module Users
     # def after_inactive_sign_up_path_for(resource)
     #   super(resource)
     # end
+
+    def after_update_path_for(resource)
+      edit_user_registration_path
+    end
   end
 end

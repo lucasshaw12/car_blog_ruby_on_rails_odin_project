@@ -69,6 +69,11 @@ User accounts
 TODO:
 
 User roles
+- "Admin". Full service access. CRUD all articles. Edit and delete users. Create and delete all comments. 
+
+- "Basic". Create, edit and delete own articles. Delete own comments. Read all articles and comments.
+
+- "Guest". View public articles and comments only. 
 
 User avatars
 
@@ -129,10 +134,22 @@ rake db:drop
 ### Signing up 
 Sign up to create a user before you can interact with the application. After clicking 'sign up' an authentication token will be displayed within your terminal. Visit the given url to submit the token to verify your user. You MUST do this before you can sign in. 
 
+### User roles
+There are 3 different types of users. "Admin", "Basic" and "Guest". 
+
+Admin can see all posts whether private or public, and can also change the roles of other users. Can write posts and comments. Can edit and delete other users articles and comments.
+
+Basic users can see all posts whether private or public, but cannot modify other users. Can write articles or comments.
+
+Guests can only see public posts and comments. No other functionality.
+
 ### Testing and test coverage
 - [Brakeman](https://github.com/presidentbeef/brakeman) checks for code vulnerabilities. This should be run before merge to main for non-local databases. To see a full breakdown of the scan run: ```brakeman``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
  
 - [Simplecov](https://github.com/simplecov-ruby/simplecov) runs when a test is executed ```bundle exec rspec```. To see a full breakdown of test coverage run ```open coverage/index.html``` in the root directory ``` car_blog_ruby_on_rails_odin_project```
+
+### Linting and Style
+- [Rubocop](https://gist.github.com/jhass/a5ae80d87f18e53e7b56#file-rubocop-yml) for code style and linting. The ```rubocop.yaml``` config file sets the desired cops. To detect all offences enter the command ```rubocop```. To detect and change offences run ```rubocop -A```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -217,6 +234,7 @@ Use this space to list resources you find helpful and would like to give credit 
 * https://github.com/othneildrew/Best-README-Template
 * [Rails Getting started](https://guides.rubyonrails.org/getting_started.html)
 * [Rails Odin Project](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails)
+* [Rubocop config](https://gist.github.com/jhass/a5ae80d87f18e53e7b56#file-rubocop-yml)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

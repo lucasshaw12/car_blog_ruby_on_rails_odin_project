@@ -46,7 +46,7 @@
 
 def create_users(number)
   number.times.map do |i|
-    User.create!(id: i.to_s, email: "user_email#{i}@email.com", password: 'password', created_at: Time.now,
+    User.create!(id: i.to_s, email: "user_email#{i}@email.com", password: 'password', role: Random.new.rand(0..1), created_at: Time.now,
                  updated_at: Time.now, username: "#{i}_username", confirmed_at: Time.now)
   end
 end

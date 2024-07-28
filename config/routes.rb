@@ -1,9 +1,19 @@
 # frozen_string_literal: true
 
+# == Route Map
+#
+
 Rails.application.routes.draw do
   root 'articles#home'
   get 'search', to: 'search#index'
-  get 'admin', to: 'admin_dashboard#index'
+
+  # resources :users, only: %w[index]
+
+  resources :admins do
+    collection do
+      get :home
+    end
+  end
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
