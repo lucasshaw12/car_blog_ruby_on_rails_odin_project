@@ -58,9 +58,12 @@ group :development, :test do
   gem 'faker'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '6.1.1'
-  gem 'rubocop', '~> 1.65'
-  gem 'rubocop-capybara', '~> 2.18'
-  gem 'rubocop-rails', '~> 2.25'
+  gem 'rubocop', '~> 1.67'
+  gem 'rubocop-capybara', '~> 2.21'
+  gem 'rubocop-factory_bot', '~> 2.26', '>= 2.26.1'
+  gem 'rubocop-rails', '~> 2.27', '>= 2.27'
+  gem 'rubocop-rspec', '~> 3.2'
+  gem 'rubocop-rspec_rails', '~> 2.30'
 end
 
 group :development do
