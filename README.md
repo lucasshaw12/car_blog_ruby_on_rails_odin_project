@@ -111,6 +111,25 @@ If any errors occur you can drop the database and follow the above steps again.
 rake db:drop
 ```
 
+### Logging in
+admin user to see full service privilidges. 
+```sh
+email: adminuser@email.com
+password: password
+```
+
+basic user. 
+```sh
+email: basicuser@email.com
+password: password
+```
+
+guest user. 
+```sh
+email: guestuser@email.com
+password: password
+```
+
 ### Prerequisites
 
 ### Installation
