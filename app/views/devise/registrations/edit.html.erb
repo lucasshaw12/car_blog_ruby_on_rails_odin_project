@@ -21,12 +21,10 @@
   
   <label class="form-label">User details</label>
 
-  <% if current_user.admin? %>
-    <div class="input-group mb-3 w-25">
-      <span class="input-group-text"><%= f.label :role %></span>
-      <%= f.select :role, options_for_select(['guest', 'basic', 'admin'], resource.role), {}, :class => 'form-select', disabled: !current_user.admin? %>
-    </div>
-  <% end %>
+  <div class="input-group mb-3 w-25">
+    <span class="input-group-text"><%= f.label :role %></span>
+    <%= f.select :role, options_for_select(['guest', 'basic', 'admin'], resource.role), {}, :class => 'form-select', disabled: !current_user.admin? %>
+  </div>
 
   <div class="input-group mb-3 w-50">
   <span class="input-group-text"><%= f.label :email %>

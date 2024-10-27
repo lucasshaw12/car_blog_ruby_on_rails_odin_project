@@ -8,11 +8,6 @@ module Users
     before_action :configure_sign_up_params, only: [:create]
     before_action :configure_account_update_params, only: [:update]
 
-    # GET /users/:id/edit - Allow admins to edit any user, or users to edit their own profile
-    # def edit
-    # render template 'devise/registrations/edit' implicitly
-    # end
-
     # PUT /users/:id - Updates the user’s information, ensuring only allowed fields are updated
     def update
       if @user.update(account_update_params)
