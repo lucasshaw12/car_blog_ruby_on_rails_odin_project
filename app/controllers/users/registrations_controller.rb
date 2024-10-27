@@ -2,67 +2,48 @@
 
 module Users
   class RegistrationsController < Devise::RegistrationsController
+    before_action :authenticate_user!
+    before_action :set_user, only: %i[edit update]
+    before_action :authorise_admin_or_self, only: %i[edit update]
     before_action :configure_sign_up_params, only: [:create]
     before_action :configure_account_update_params, only: [:update]
 
-    # GET /resource/sign_up
-    # def new
-    #   super
-    # end
+    # PUT /users/:id - Updates the user’s information, ensuring only allowed fields are updated
+    def update
+      if @user.update(account_update_params)
+        redirect_to after_update_path_for(@user), notice: 'User updated successfully.'
+      else
+        render :edit
+      end
+    end
 
-    # POST /resource
-    # def create
-    #   super
-    # end
+    # Customize where users are redirected after updating their account
+    def after_update_path_for(resource)
+      current_user.admin? ? edit_user_account_path(resource) : edit_user_registration_path
+    end
 
-    # GET /resource/edit
-    # def edit
-    #   super
-    # end
+    private
 
-    # PUT /resource
-    # def update
-    #   super
-    # end
+    # Retrieve the user by ID if available, otherwise use the current user
+    def set_user
+      @user = params[:id].present? ? User.find(params[:id]) : current_user
+    end
 
-    # DELETE /resource
-    # def destroy
-    #   super
-    # end
+    # Only allow admins or the user themselves to access the edit/update actions
+    def authorise_admin_or_self
+      return if current_user.admin? || current_user == @user
 
-    # GET /resource/cancel
-    # Forces the session data which is usually expired after sign
-    # in to be expired now. This is useful if the user wants to
-    # cancel oauth signing in/up in the middle of the process,
-    # removing all OAuth session data.
-    # def cancel
-    #   super
-    # end
+      redirect_to root_path, alert: 'Access denied.'
+    end
 
-    # protected
-
-    # If you have extra params to permit, append them to the sanitizer.
+    # Permit extra parameters for sign-up
     def configure_sign_up_params
       devise_parameter_sanitizer.permit(:sign_up, keys: %i[username avatar])
     end
 
-    # If you have extra params to permit, append them to the sanitizer.
+    # Permit extra parameters for account update
     def configure_account_update_params
       devise_parameter_sanitizer.permit(:account_update, keys: %i[username avatar role])
-    end
-
-    # The path used after sign up.
-    # def after_sign_up_path_for(resource)
-    #   super(resource)
-    # end
-
-    # The path used after sign up for inactive accounts.
-    # def after_inactive_sign_up_path_for(resource)
-    #   super(resource)
-    # end
-
-    def after_update_path_for(resource)
-      edit_user_registration_path
     end
   end
 end

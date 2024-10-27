@@ -20,9 +20,9 @@
   <hr>
   
   <label class="form-label">User details</label>
+
   <div class="input-group mb-3 w-25">
-  <span class="input-group-text"><%= f.label :role %>
-  </span>
+    <span class="input-group-text"><%= f.label :role %></span>
     <%= f.select :role, options_for_select(['guest', 'basic', 'admin'], resource.role), {}, :class => 'form-select', disabled: !current_user.admin? %>
   </div>
 

@@ -15,10 +15,8 @@ class AdminsController < ApplicationController
   private
 
   def admin_user_access
-    if current_user.role == 'admin'
-      render :home
-    else
-      redirect_to new_user_session_path
-    end
+    return if current_user&.role == 'admin'
+
+    redirect_to new_user_session_path, alert: 'Access denied: Admins only.'
   end
 end
