@@ -11,6 +11,10 @@ AllCops:
   Exclude:
     - 'db/schema.rb' # Exclude auto-generated schema files
 
+inherit_mode:
+  merge:
+    - Exclude
+    
 Metrics/MethodLength:
   Enabled: false
 
