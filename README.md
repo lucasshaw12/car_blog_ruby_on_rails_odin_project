@@ -112,7 +112,7 @@ rake db:drop
 ```
 
 ### Logging in
-admin user to see full service privilidges. 
+admin user to see full service privileges. 
 ```sh
 email: adminuser@email.com
 password: password
