@@ -19,9 +19,8 @@ RSpec.describe Article, type: :model do
   let(:user) { create(:user) }
 
   context 'with invalid params' do
-    let(:subject) do
-      described_class.new(user:, title: 'title 1', body: 'body text and content', status: 'public')
-    end
+    subject { described_class.new(user:, title: 'title 1', body: 'body text and content', status: 'public') }
+
     let(:errors) { subject.errors.messages }
 
     it 'is invalid without a user' do
@@ -58,7 +57,7 @@ RSpec.describe Article, type: :model do
   context 'with valid params' do
     subject { described_class.new(user:, title: 'title 1', body: 'body text and content', status: 'public') }
 
-    it 'subject to be valid' do
+    it 'is valid' do
       expect(subject).to be_valid
     end
   end

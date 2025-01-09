@@ -42,6 +42,7 @@ RSpec.describe ArticlesController, type: :controller do
             }
           }
         end
+
         it 'creates an article' do
           expect { post :create, params: }.to change { Article.count }.by(1)
         end
@@ -66,6 +67,7 @@ RSpec.describe ArticlesController, type: :controller do
             }
           }
         end
+
         it 'does not create an article' do
           expect { post :create, params: }.to change { Article.count }.by(0)
         end
@@ -121,7 +123,7 @@ RSpec.describe ArticlesController, type: :controller do
         it 'does not update article value' do
           put :update, params: { id: article.id, article: params }
           article.reload
-          expect(article.title).to_not eq(' ')
+          expect(article.title).not_to eq(' ')
         end
       end
     end

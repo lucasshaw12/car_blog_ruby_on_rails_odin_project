@@ -14,7 +14,7 @@ AllCops:
 inherit_mode:
   merge:
     - Exclude
-    
+
 Metrics/MethodLength:
   Enabled: false
 
@@ -22,6 +22,9 @@ Layout/LineLength:
   Enabled: false
 
 RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
   Enabled: false
 
 # Custom settings for Style/Documentation
