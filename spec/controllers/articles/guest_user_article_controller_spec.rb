@@ -3,8 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  guest = FactoryBot.create(:guest)
-
   describe '"Guest" user' do
     describe 'GET #show' do
       let(:article) { FactoryBot.create(:article) }
@@ -48,8 +46,7 @@ RSpec.describe ArticlesController, type: :controller do
             body: 'New article body',
             status: 'public',
             created_at: Time.now,
-            updated_at: Time.now,
-            guest:
+            updated_at: Time.now
           }
         }
       end

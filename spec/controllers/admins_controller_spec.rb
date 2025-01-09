@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe AdminsController, type: :controller do
-  admin_user = FactoryBot.create(:admin)
+  let(:admin_user) { FactoryBot.create(:admin) }
+
   describe 'GET #index' do
     context 'admin user' do
       before do

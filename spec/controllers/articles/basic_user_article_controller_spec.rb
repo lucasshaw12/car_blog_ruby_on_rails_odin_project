@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  basic = FactoryBot.create(:basic)
+  let(:basic) { FactoryBot.create(:basic) }
+
   before do
     sign_in basic
   end
