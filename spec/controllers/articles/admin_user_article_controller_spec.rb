@@ -69,7 +69,7 @@ RSpec.describe ArticlesController, type: :controller do
         end
 
         it 'does not create an article' do
-          expect { post :create, params: }.to change(Article, :count).by(0)
+          expect { post :create, params: }.not_to change(Article, :count)
         end
 
         it 'renders :new template' do

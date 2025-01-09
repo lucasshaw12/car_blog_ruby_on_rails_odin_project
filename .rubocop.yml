@@ -27,8 +27,18 @@ RSpec/MultipleExpectations:
 RSpec/NestedGroups:
   Enabled: false
 
-FactoryBot/SyntaxMethods:
+Metrics/AbcSize:
   Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false 
+
+Rails/LexicallyScopedActionFilter:
+  Enabled: false
+
 
 # Custom settings for Style/Documentation
 Style/Documentation:
