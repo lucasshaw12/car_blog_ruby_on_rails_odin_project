@@ -1,0 +1,45 @@
+# Enable necessary RuboCop extensions
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-factory_bot
+  - rubocop-capybara
+
+# Global settings
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb' # Exclude auto-generated schema files
+
+Metrics/MethodLength:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+# Custom settings for Style/Documentation
+Style/Documentation:
+  Enabled: true
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'app/controllers/admins_controller.rb'
+    - 'app/controllers/articles_controller.rb'
+    - 'app/controllers/comments_controller.rb'
+
+Rails:
+  Enabled: true
+
+RSpec:
+  Enabled: true
+  AllCops:
+    Exclude:
+      - 'spec/**/*.rb'
+
+FactoryBot:
+  Enabled: true
+
+Capybara:
+  Enabled: true
