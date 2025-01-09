@@ -6,6 +6,10 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, on: %i[create destroy]
 
+  def edit
+    @comment = @article.comments.find(params[:id])
+  end
+
   def create
     @comment = @article.comments.build(comment_params)
     @comment.user = current_user
@@ -17,10 +21,6 @@ class CommentsController < ApplicationController
     @comment = @article.comments.find(params[:id])
     @comment.destroy
     redirect_to article_path(@article), status: :see_other, notice: 'Comment deleted successfully'
-  end
-
-  def edit
-    @comment = @article.comments.find(params[:id])
   end
 
   # All private methods ensure only the class they're initialized in can access the method

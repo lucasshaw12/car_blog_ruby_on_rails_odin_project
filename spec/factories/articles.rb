@@ -20,6 +20,6 @@ FactoryBot.define do
     created_at { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
     updated_at { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
     status { 'public' }
-    association :user, factory: :user
+    user factory: %i[user]
   end
 end

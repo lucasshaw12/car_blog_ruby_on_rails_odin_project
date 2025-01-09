@@ -12,24 +12,29 @@ RSpec.describe 'Articles', type: :request do
       before do
         sign_in admin_user
       end
+
       it 'renders the users home page' do
         get root_path
         expect(response).to have_http_status(:successful)
       end
     end
+
     context 'basic user' do
       before do
         sign_in basic_user
       end
+
       it 'renders the users home page' do
         get root_path
         expect(response).to have_http_status(:successful)
       end
     end
+
     context 'guest user' do
       before do
         sign_in guest_user
       end
+
       it 'renders the users home page' do
         get root_path
         expect(response).to have_http_status(:successful)

@@ -21,7 +21,7 @@
 #
 # User model validations are normally covered in Devise, however adding them in anyway for coverage of #create
 RSpec.describe User do
-  let(:user) { create :user }
+  let(:user) { create(:user) }
   let(:errors) { user.errors.messages }
 
   describe '#create' do

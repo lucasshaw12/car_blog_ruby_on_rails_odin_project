@@ -16,7 +16,7 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  let(:user) { create :user }
+  let(:user) { create(:user) }
 
   context 'with invalid params' do
     let(:subject) do
