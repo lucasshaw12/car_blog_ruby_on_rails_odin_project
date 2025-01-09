@@ -36,7 +36,7 @@ jobs:
           bundler-cache: true
 
       - name: Security audit dependencies
-        run: bin/bundler-audit --update
+        run: bundle exec bundler-audit update
 
       - name: Security audit application code
         run: bundle exec brakeman -q
