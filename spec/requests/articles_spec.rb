@@ -2,10 +2,12 @@
 
 require 'rails_helper'
 
+require 'rails_helper'
+
 RSpec.describe 'Articles', type: :request do
-  admin_user = FactoryBot.create(:admin)
-  guest_user = FactoryBot.create(:guest)
-  basic_user = FactoryBot.create(:basic)
+  let(:admin_user) { create(:admin) }
+  let(:guest_user) { create(:guest) }
+  let(:basic_user) { create(:basic) }
 
   describe '#home' do
     context 'admin user' do

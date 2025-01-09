@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  let(:admin) { FactoryBot.create(:admin) }
+  let(:admin) { create(:admin) }
 
   before do
     sign_in admin
@@ -81,7 +81,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'GET #edit' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       it 'renders :edit template' do
         get :edit, params: { id: article.id }
@@ -95,10 +95,10 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'PUT #update' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       context 'with valid params' do
-        let(:params) { FactoryBot.attributes_for(:article, title: 'new title') }
+        let(:params) { attributes_for(:article, title: 'new title') }
 
         it 'renders :show template' do
           put :update, params: { id: article.id, article: params }
@@ -113,7 +113,7 @@ RSpec.describe ArticlesController, type: :controller do
       end
 
       context 'with invalid params' do
-        let(:params) { FactoryBot.attributes_for(:article, title: ' ', body: 'new body text') }
+        let(:params) { attributes_for(:article, title: ' ', body: 'new body text') }
 
         it 'renders :edit template' do
           put :update, params: { id: article.id, article: params }
@@ -129,7 +129,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'DELETE #destroy' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       it 'redirects to :index template' do
         delete :destroy, params: { id: article.id }
