@@ -8,6 +8,7 @@ RSpec.describe Visible do
   describe '#archived?' do
     context 'when article status is archived' do
       it 'returns true' do
+        debugger
         article.status = 'archived'
         expect(article.archived?).to eq true
       end

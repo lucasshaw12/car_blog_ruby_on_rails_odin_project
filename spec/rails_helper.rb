@@ -80,4 +80,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Clean database before test run
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation) # Clean the database completely before the test suite
+    DatabaseCleaner.strategy = :transaction # Use transactions during individual tests
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning { example.run }
+  end
 end
