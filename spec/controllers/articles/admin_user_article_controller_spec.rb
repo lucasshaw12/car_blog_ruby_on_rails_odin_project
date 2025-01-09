@@ -36,15 +36,15 @@ RSpec.describe ArticlesController, type: :controller do
               title: 'New article title',
               body: 'New article body',
               status: 'public',
-              created_at: Time.now,
-              updated_at: Time.now,
+              created_at: Time.zone.now,
+              updated_at: Time.zone.now,
               admin:
             }
           }
         end
 
         it 'creates an article' do
-          expect { post :create, params: }.to change { Article.count }.by(1)
+          expect { post :create, params: }.to change(Article, :count).by(1)
         end
 
         it 'redirects to article :show template' do
@@ -61,15 +61,15 @@ RSpec.describe ArticlesController, type: :controller do
               title: '',
               body: 'New article body',
               status: 'public',
-              created_at: Time.now,
-              updated_at: Time.now,
+              created_at: Time.zone.now,
+              updated_at: Time.zone.now,
               admin:
             }
           }
         end
 
         it 'does not create an article' do
-          expect { post :create, params: }.to change { Article.count }.by(0)
+          expect { post :create, params: }.to change(Article, :count).by(0)
         end
 
         it 'renders :new template' do

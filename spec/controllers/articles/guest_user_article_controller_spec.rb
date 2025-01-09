@@ -45,8 +45,8 @@ RSpec.describe ArticlesController, type: :controller do
             title: 'New article title',
             body: 'New article body',
             status: 'public',
-            created_at: Time.now,
-            updated_at: Time.now
+            created_at: Time.zone.now,
+            updated_at: Time.zone.now
           }
         }
       end

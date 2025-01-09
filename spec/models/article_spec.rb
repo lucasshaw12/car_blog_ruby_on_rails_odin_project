@@ -19,46 +19,44 @@ RSpec.describe Article, type: :model do
   let(:user) { create(:user) }
 
   context 'with invalid params' do
-    subject { described_class.new(user:, title: 'title 1', body: 'body text and content', status: 'public') }
-
-    let(:errors) { subject.errors.messages }
+    let(:article) { described_class.new(user:, title: 'title 1', body: 'body text and content', status: 'public') }
+    let(:errors) { article.errors.messages }
 
     it 'is invalid without a user' do
-      subject.user = nil
-      expect(subject).not_to be_valid
+      article.user = nil
+      expect(article).not_to be_valid
     end
 
     it 'is invalid without a title' do
-      subject.title = nil
-      expect(subject).not_to be_valid
+      article.title = nil
+      expect(article).not_to be_valid
       expect(errors[:title]).to include "can't be blank"
       expect(errors[:title]).to include 'is too short (minimum is 1 character)'
     end
 
     it 'is invalid without a body' do
-      subject.body = nil
-      expect(subject).not_to be_valid
+      article.body = nil
+      expect(article).not_to be_valid
       expect(errors[:body]).to include "can't be blank"
     end
 
     it 'is invalid when body is less than 10 characters' do
-      subject.body = 'text'
-      expect(subject).not_to be_valid
+      article.body = 'text'
+      expect(article).not_to be_valid
       expect(errors[:body]).to include 'is too short (minimum is 10 characters)'
     end
 
     it 'is invalid without a status' do
-      subject.status = nil
-      expect(subject).not_to be_valid
+      article.status = nil
+      expect(article).not_to be_valid
       expect(errors[:status]).to include 'is not included in the list'
     end
   end
 
   context 'with valid params' do
-    subject { described_class.new(user:, title: 'title 1', body: 'body text and content', status: 'public') }
-
     it 'is valid' do
-      expect(subject).to be_valid
+      article = described_class.new(user:, title: 'title 1', body: 'body text and content', status: 'public')
+      expect(article).to be_valid
     end
   end
 end

@@ -27,6 +27,9 @@ RSpec/MultipleExpectations:
 RSpec/NestedGroups:
   Enabled: false
 
+FactoryBot/SyntaxMethods:
+  Enabled: false
+
 # Custom settings for Style/Documentation
 Style/Documentation:
   Enabled: true
