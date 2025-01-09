@@ -26,8 +26,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_one_attached :avatar
-  has_many :articles
-  has_many :comments
+  has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
 
   def create
