@@ -39,6 +39,13 @@ Rails/I18nLocaleTexts:
 Rails/LexicallyScopedActionFilter:
   Enabled: false
 
+RSpec/SpecFilePathFormat:
+  Enabled: false
+
+Rails/NotNullColumn:
+  Exclude:
+    - 'db/migrate/*.rb'
+
 Rails:
   Enabled: true
 

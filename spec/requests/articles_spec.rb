@@ -2,7 +2,6 @@
 
 require 'rails_helper'
 
-
 RSpec.describe 'Articles', type: :request do
   let(:admin_user) { create(:admin) }
   let(:guest_user) { create(:guest) }

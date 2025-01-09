@@ -9,7 +9,7 @@ RSpec.describe ArticlesController, type: :controller do
 
       it 'renders :show template' do
         get :show, params: { id: article.id }
-        expect(:article).to render_template(:show)
+        expect(response).to render_template(:show)
       end
 
       it 'assigns requested article to @article' do

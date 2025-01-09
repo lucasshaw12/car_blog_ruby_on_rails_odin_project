@@ -67,7 +67,7 @@ class User < ApplicationRecord
     self.role ||= :guest
   end
 
-  def self.ransackable_attributes(_auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil) # rubocop:disable Lint/IneffectiveAccessModifier
     ['username']
   end
 end
