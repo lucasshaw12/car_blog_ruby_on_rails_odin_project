@@ -2,7 +2,6 @@
 
 require 'rails_helper'
 
-require 'rails_helper'
 
 RSpec.describe 'Articles', type: :request do
   let(:admin_user) { create(:admin) }
@@ -10,7 +9,7 @@ RSpec.describe 'Articles', type: :request do
   let(:basic_user) { create(:basic) }
 
   describe '#home' do
-    context 'admin user' do
+    context 'with admin user' do
       before do
         sign_in admin_user
       end
@@ -21,7 +20,7 @@ RSpec.describe 'Articles', type: :request do
       end
     end
 
-    context 'basic user' do
+    context 'with basic user' do
       before do
         sign_in basic_user
       end
@@ -32,7 +31,7 @@ RSpec.describe 'Articles', type: :request do
       end
     end
 
-    context 'guest user' do
+    context 'with guest user' do
       before do
         sign_in guest_user
       end
@@ -43,7 +42,7 @@ RSpec.describe 'Articles', type: :request do
       end
     end
 
-    context 'no user signed in' do
+    context 'with no user signed in' do
       it 'redirects to the sign in page' do
         get root_path
         expect(response).to redirect_to user_session_path

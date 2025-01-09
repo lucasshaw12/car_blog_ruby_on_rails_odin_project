@@ -6,7 +6,7 @@ RSpec.describe AdminsController, type: :controller do
   let(:admin_user) { create(:admin) }
 
   describe 'GET #index' do
-    context 'admin user' do
+    context 'with admin user' do
       before do
         sign_in admin_user
       end
@@ -17,7 +17,7 @@ RSpec.describe AdminsController, type: :controller do
       end
     end
 
-    context 'non admin user' do
+    context 'when a non admin user' do
       it 'redirects to root route' do
         get :home
         expect(response).to redirect_to(new_user_session_path)

@@ -39,16 +39,6 @@ Rails/I18nLocaleTexts:
 Rails/LexicallyScopedActionFilter:
   Enabled: false
 
-
-# Custom settings for Style/Documentation
-Style/Documentation:
-  Enabled: true
-  Exclude:
-    - 'db/migrate/*.rb'
-    - 'app/controllers/admins_controller.rb'
-    - 'app/controllers/articles_controller.rb'
-    - 'app/controllers/comments_controller.rb'
-
 Rails:
   Enabled: true
 

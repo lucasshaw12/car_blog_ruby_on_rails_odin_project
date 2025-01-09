@@ -132,7 +132,7 @@ RSpec.describe ArticlesController, type: :controller do
 
       it 'deletes article' do
         delete :destroy, params: { id: article.id }
-        expect(Article.exists?(article.id)).to be_falsey
+        expect(Article).not_to exist(article.id)
       end
     end
   end
