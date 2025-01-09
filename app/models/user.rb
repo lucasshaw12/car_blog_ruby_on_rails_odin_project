@@ -26,8 +26,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   has_one_attached :avatar
-  has_many :articles
-  has_many :comments
+  has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
 
   def create
@@ -60,14 +60,14 @@ class User < ApplicationRecord
   # guest = non-signed in user
   # basic = signed in user
   # admin = superuser with extra features (view/edit/delete user details, edit all articles and comments)
-  enum role: %i[guest basic admin]
+  enum :role, { guest: 0, basic: 1, admin: 2 }
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
     self.role ||= :guest
   end
 
-  def self.ransackable_attributes(_auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil) # rubocop:disable Lint/IneffectiveAccessModifier
     ['username']
   end
 end

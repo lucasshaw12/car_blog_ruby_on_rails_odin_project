@@ -44,7 +44,7 @@ end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = Rails.root.join('spec/fixtures').to_s
 
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
@@ -80,4 +80,14 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Clean database before test run
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation) # Clean the database completely before the test suite
+    DatabaseCleaner.strategy = :transaction # Use transactions during individual tests
+  end
+
+  config.around do |example|
+    DatabaseCleaner.cleaning { example.run }
+  end
 end

@@ -3,7 +3,7 @@
 module ApplicationHelper
   # For comment notification indicator colour
   def read_unread_style
-    @unread.count.zero? ? 'read' : 'unread'
+    @unread.count.zero? ? 'read' : 'unread' # rubocop:disable RSpec/HelperInstanceVariable
   end
 
   def present_num_of_articles
@@ -11,10 +11,10 @@ module ApplicationHelper
   end
 
   def present_num_of_admins
-    "The forum has #{pluralize(User.all.where(role: 2).count, 'admin')}"
+    "The forum has #{pluralize(User.where(role: 2).count, 'admin')}"
   end
 
   def present_num_of_users
-    "The forum has #{pluralize(User.all.where(role: 1).count, 'basic user')}"
+    "The forum has #{pluralize(User.where(role: 1).count, 'basic user')}"
   end
 end

@@ -79,4 +79,3 @@ db/development 2.sqlite3-wal
 
 /config/master.key
 sendgrid.env
-.rubocop.yml

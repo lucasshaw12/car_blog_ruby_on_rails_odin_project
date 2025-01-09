@@ -29,6 +29,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     @article = Article.new(article_params)
     @article.user = current_user
@@ -38,10 +42,6 @@ class ArticlesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    @article = Article.find(params[:id])
   end
 
   def update
@@ -72,6 +72,6 @@ class ArticlesController < ApplicationController
     return unless current_user
 
     notifications_to_mark_as_read = @article.notifications_as_article.where(recipient: current_user)
-    notifications_to_mark_as_read.update_all(read_at: Time.zone.now)
+    notifications_to_mark_as_read.update_all(read_at: Time.zone.now) # rubocop:disable Rails/SkipsModelValidations
   end
 end

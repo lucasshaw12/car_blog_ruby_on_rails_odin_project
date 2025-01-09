@@ -3,8 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  admin = FactoryBot.create(:admin)
+  let(:admin) { create(:admin) }
 
+  before do
+    sign_in admin
+  end
   # TODO
   # Admin can do same as 'basic' user plus edit/delete any article & comment
   # Delete any article
@@ -13,9 +16,6 @@ RSpec.describe ArticlesController, type: :controller do
   # Edit other users details
 
   describe '"Admin" user' do
-    before do
-      sign_in admin
-    end
     describe 'GET #new' do
       it 'renders :new template' do
         get :new
@@ -36,14 +36,15 @@ RSpec.describe ArticlesController, type: :controller do
               title: 'New article title',
               body: 'New article body',
               status: 'public',
-              created_at: Time.now,
-              updated_at: Time.now,
+              created_at: Time.zone.now,
+              updated_at: Time.zone.now,
               admin:
             }
           }
         end
+
         it 'creates an article' do
-          expect { post :create, params: }.to change { Article.count }.by(1)
+          expect { post :create, params: }.to change(Article, :count).by(1)
         end
 
         it 'redirects to article :show template' do
@@ -60,14 +61,15 @@ RSpec.describe ArticlesController, type: :controller do
               title: '',
               body: 'New article body',
               status: 'public',
-              created_at: Time.now,
-              updated_at: Time.now,
+              created_at: Time.zone.now,
+              updated_at: Time.zone.now,
               admin:
             }
           }
         end
+
         it 'does not create an article' do
-          expect { post :create, params: }.to change { Article.count }.by(0)
+          expect { post :create, params: }.not_to change(Article, :count)
         end
 
         it 'renders :new template' do
@@ -79,7 +81,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'GET #edit' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       it 'renders :edit template' do
         get :edit, params: { id: article.id }
@@ -93,10 +95,10 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'PUT #update' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       context 'with valid params' do
-        let(:params) { FactoryBot.attributes_for(:article, title: 'new title') }
+        let(:params) { attributes_for(:article, title: 'new title') }
 
         it 'renders :show template' do
           put :update, params: { id: article.id, article: params }
@@ -111,7 +113,7 @@ RSpec.describe ArticlesController, type: :controller do
       end
 
       context 'with invalid params' do
-        let(:params) { FactoryBot.attributes_for(:article, title: ' ', body: 'new body text') }
+        let(:params) { attributes_for(:article, title: ' ', body: 'new body text') }
 
         it 'renders :edit template' do
           put :update, params: { id: article.id, article: params }
@@ -121,13 +123,13 @@ RSpec.describe ArticlesController, type: :controller do
         it 'does not update article value' do
           put :update, params: { id: article.id, article: params }
           article.reload
-          expect(article.title).to_not eq(' ')
+          expect(article.title).not_to eq(' ')
         end
       end
     end
 
     describe 'DELETE #destroy' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       it 'redirects to :index template' do
         delete :destroy, params: { id: article.id }
@@ -136,7 +138,7 @@ RSpec.describe ArticlesController, type: :controller do
 
       it 'deletes article' do
         delete :destroy, params: { id: article.id }
-        expect(Article.exists?(article.id)).to be_falsey
+        expect(Article).not_to exist(article.id)
       end
     end
   end

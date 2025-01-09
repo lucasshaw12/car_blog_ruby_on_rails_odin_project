@@ -12,7 +12,7 @@ RSpec.describe Users::RegistrationsController, type: :controller do
 
   before do
     # Specify that we're using the custom Devise routes
-    @request.env['devise.mapping'] = Devise.mappings[:user]
+    @request.env['devise.mapping'] = Devise.mappings[:user] # rubocop:disable RSpec/InstanceVariable
   end
 
   describe 'GET #edit' do

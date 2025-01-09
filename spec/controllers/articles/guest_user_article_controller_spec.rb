@@ -3,15 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
-  guest = FactoryBot.create(:guest)
-
   describe '"Guest" user' do
     describe 'GET #show' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       it 'renders :show template' do
         get :show, params: { id: article.id }
-        expect(:article).to render_template(:show)
+        expect(response).to render_template(:show)
       end
 
       it 'assigns requested article to @article' do
@@ -47,9 +45,8 @@ RSpec.describe ArticlesController, type: :controller do
             title: 'New article title',
             body: 'New article body',
             status: 'public',
-            created_at: Time.now,
-            updated_at: Time.now,
-            guest:
+            created_at: Time.zone.now,
+            updated_at: Time.zone.now
           }
         }
       end
@@ -61,7 +58,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'GET #edit' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       it 'redirects to :sign_in template' do
         get :edit, params: { id: article.id }
@@ -70,8 +67,8 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'PUT #update' do
-      let(:article) { FactoryBot.create(:article) }
-      let(:params) { FactoryBot.attributes_for(:article, title: 'new title') }
+      let(:article) { create(:article) }
+      let(:params) { attributes_for(:article, title: 'new title') }
 
       it 'redirects to :sign_in template' do
         put :update, params: { id: article.id, article: params }
@@ -80,7 +77,7 @@ RSpec.describe ArticlesController, type: :controller do
     end
 
     describe 'DELETE #destroy' do
-      let(:article) { FactoryBot.create(:article) }
+      let(:article) { create(:article) }
 
       it 'redirects to :sign_in template' do
         delete :destroy, params: { id: article.id }
