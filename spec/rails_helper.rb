@@ -14,8 +14,14 @@ require 'devise'
 
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
-  SimpleCov.start 'rails'
-  puts 'required simplecov'
+  SimpleCov.start 'rails' do
+    # ignore devise controller files besdies custom regration controller methods
+    add_filter '/users/confirmations'
+    add_filter '/users/unlocks'
+    add_filter '/users/omiiauth'
+    add_filter '/users/sessions'
+    add_filter '/users/passwords'
+  end
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
