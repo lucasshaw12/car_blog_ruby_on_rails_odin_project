@@ -75,6 +75,15 @@ User roles
 
 - "Guest". View public articles and comments only. 
 
+
+Tests
+- Full coverage (see Simplecov)
+
+- View spec coverage, although simplecov does not cover view specs by default
+
+- Acceptance tests (capybara?)
+
+
 User avatars
 
 <!-- GETTING STARTED -->
